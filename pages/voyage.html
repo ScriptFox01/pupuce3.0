@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Projets Voyage 🗺️</title>
+    <link rel="stylesheet" href="../style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Styles spécifiques aux cartes Voyage */
+        .travel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+        }
+
+        .travel-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            text-align: left;
+            border: 1px solid #e0e0e0; /* Bordure très fine */
+            cursor: pointer;
+        }
+
+        .travel-card:hover {
+            transform: translateY(-10px); /* Montre l'animation fluide */
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .travel-card img {
+            width: 100%;
+            height: 200px; /* Taille fixe pour l'uniformité du site de réservation */
+            object-fit: cover; /* Assure que l'image couvre la zone */
+        }
+
+        .travel-details {
+            padding: 20px;
+        }
+
+        .travel-details h3 {
+            color: #ff80a6; /* Rose Vif pour le titre de la destination */
+            margin-top: 0;
+            font-size: 1.6em;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .travel-details p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .travel-details .status {
+            font-weight: bold;
+            color: #4682B4; /* Vert Bleu Canard */
+            border: 2px solid #4682B4;
+            padding: 5px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-link">← Retour à l'Accueil</a>
+
+    <main>
+        <h1>🗺️ Nos Projets Voyage : Réservez-moi !</h1>
+        <p>Clique sur la carte qui te fait le plus rêver. Ces voyages sont en attente d'une date de départ !</p>
+        
+        <div class="travel-grid">
+            
+            <div class="travel-card">
+                <img src="https://images.unsplash.com/photo-1549477028-1b22e1b6f6f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjU2OHwwfDF8c2VhcmNofDE3fHxicmF6aWx8ZW58MHx8fHwxNjMzMzkzMDYw&ixlib=rb-1.2.1&q=80&w=400" alt="Plage du Brésil">
+                <div class="travel-details">
+                    <h3>Brésil 🇧🇷</h3>
+                    <p>Le rythme de la samba et les plages incroyables. On pourrait apprendre à danser ensemble !</p>
+                    <span class="status">Statut : Idée 💭</span>
+                </div>
+            </div>
+
+            <div class="travel-card">
+                <img src="https://images.unsplash.com/photo-1588661706680-36e3995f7c32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjU2OHwwfDF8c2VhcmNofDEyfHx0aGFpbGFuZCVFMyU4MCU5RGlzbGFuZHN8ZW58MHx8fHwxNjMzMzkzMTIx&ixlib=rb-1.2.1&q=80&w=400" alt="Plage en Thaïlande">
+                <div class="travel-details">
+                    <h3>Thaïlande 🇹🇭</h3>
+                    <p>Temples magnifiques et plages paradisiaques. L'endroit parfait pour se détendre et ne penser à rien.</p>
+                    <span class="status">Statut : À Budgétiser 💰</span>
+                </div>
+            </div>
+
+            <div class="travel-card">
+                <img src="https://images.unsplash.com/photo-1510113271501-526487e47d10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjU2OHwwfDF8c2VhcmNofDF8fGF1cm9yYSUyMGJvcmVhbGlzfGVufDB8fHx8MTYzMzM5MzM1Mg&ixlib=rb-1.2.1&q=80&w=400" alt="Aurores Boréales">
+                <div class="travel-details">
+                    <h3>Aurores Boréales 🌌</h3>
+                    <p>Notre rêve le plus romantique : un spectacle de lumières sous les étoiles, bien au chaud l'un contre l'autre.</p>
+                    <span class="status">Statut : Le Plus Urgent ! ✨</span>
+                </div>
+            </div>
+            
+            <div class="travel-card">
+                <img src="https://images.unsplash.com/photo-1550992383-a9d3167b5e43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjU2OHwwfDF8c2VhcmNofDN8fGFtc3RlcmRhbXxlbnwwfHx8fDE2MzQzNDY2Nzk&ixlib=rb-1.2.1&q=80&w=400" alt="Canaux d'Amsterdam">
+                <div class="travel-details">
+                    <h3>Amsterdam 🇳🇱</h3>
+                    <p>Une petite escapade européenne, le vélo, les canaux et beaucoup de culture. Parfait pour un long week-end.</p>
+                    <span class="status">Statut : Facile à Réaliser 👍</span>
+                </div>
+            </div>
+            
+            <div class="travel-card">
+                <img src="https://images.unsplash.com/photo-1560965319-33108c5c7d2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjU2OHwwfDF8c2VhcmNofDZ8fHBvcnR1Z2FsJTIwbGlzYm9ufGVufDB8fHx8MTYzNDM0NjkxNA&ixlib=rb-1.2.1&q=80&w=400" alt="Lisbonne, Portugal">
+                <div class="travel-details">
+                    <h3>Portugal 🇵🇹</h3>
+                    <p>Les tramways de Lisbonne, le Fado, et des Pastéis de Nata à savourer ensemble. Soleil garanti.</p>
+                    <span class="status">Statut : En Attente</span>
+                </div>
+            </div>
+
+        </div>
+        
+        <a href="../index.html" class="back-link">← Retour à l'Accueil</a>
+    </main>
+</body>
+</html>
