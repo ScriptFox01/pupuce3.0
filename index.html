@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Notre Espace Secret : Pupuce & Moi 💖</title>
+    <link rel="stylesheet" href="style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div id="password-screen">
+        <h2>Espace Privé - Entrez le code secret</h2>
+        <input type="password" id="password-input" placeholder="Le nom de la plus belle...">
+        <button onclick="checkPassword()">Accéder au site</button>
+        <p id="error-message" style="color: #c0392b; margin-top: 10px; display: none;">Code incorrect. Réessaie, mon amour !</p>
+    </div>
+    <div id="site-content" style="display: none;">
+        <header>
+            <h1>Bienvenue dans notre monde, ma Pupuce !</h1>
+            <p>J'ai créé cet endroit juste pour nous. ❤️</p>
+        </header>
+
+        <nav class="menu">
+            <a href="index.html">💖 ACCUEIL</a>
+            <a href="pages/souvenirs.html">📸 SOUVENIRS</a>
+            <a href="pages/voyage.html">🗺️ PROJET VOYAGE</a>
+            <a href="pages/documents.html">📄 DOCUMENTS</a>
+            <a href="pages/playlist.html">🎧 PLAYLIST</a>
+        </nav>
+
+        <main>
+            <h2>Ceci est notre petit coin secret</h2>
+            <p>Ce site est notre tableau de bord pour tout ce qui compte : les idées de voyage, les listes de choses à faire, et surtout, nos plus beaux souvenirs.</p>
+            <p>Je t'aime plus que tout, mon amour.</p>
+        </main>
+    </div>
+    <script>
+        function checkPassword() {
+            // !!! LE CODE SECRET EST ICI : "Pupuce" !!!
+            const correctPassword = "Pupuce"; 
+            const enteredPassword = document.getElementById("password-input").value;
+            const content = document.getElementById("site-content");
+            const screen = document.getElementById("password-screen");
+            const error = document.getElementById("error-message");
+
+            if (enteredPassword === correctPassword) {
+                // Si le code est bon : cacher le formulaire et afficher le site
+                screen.style.display = 'none';
+                content.style.display = 'block';
+                // Mémoriser que le site est déverrouillé pour cette session
+                sessionStorage.setItem('unlocked', 'true'); 
+            } else {
+                // Si le code est faux : afficher un message d'erreur
+                error.style.display = 'block';
+            }
+        }
+        // Vérifier si le site a déjà été déverrouillé dans cette session
+        if (sessionStorage.getItem('unlocked') === 'true') {
+            document.getElementById("password-screen").style.display = 'none';
+            document.getElementById("site-content").style.display = 'block';
+        }
+    </script>
+</body>
+</html>
