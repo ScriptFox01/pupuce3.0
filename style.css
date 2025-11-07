@@ -168,3 +168,57 @@ main {
         text-align: center;
     }
 }
+/* --- STYLE SPÉCIFIQUE À L'ÉCRAN DE VERROUILLAGE --- */
+#password-screen {
+    /* Centrage et fond doux */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Prend toute la hauteur de l'écran */
+    background-color: #fce4ec; /* Arrière-plan rose très pâle */
+    padding: 30px;
+}
+
+#password-screen h2 {
+    /* Titre mignon */
+    font-family: 'Dancing Script', cursive; 
+    color: #ff80a6; /* Rose vif */
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+#password-input {
+    /* Champ de saisie arrondi et coloré */
+    padding: 12px 20px;
+    margin: 15px 0;
+    border: 3px solid #4682B4; /* Bordure Vert Bleu Canard */
+    border-radius: 25px; /* Très arrondi */
+    width: 250px;
+    text-align: center;
+    font-size: 1.1em;
+    outline: none; /* Enlève la bordure par défaut au focus */
+    transition: border-color 0.3s;
+}
+
+#password-input:focus {
+    border-color: #ff80a6; /* Change au rose au focus */
+}
+
+#password-screen button {
+    /* Bouton d'accès stylisé */
+    background-color: #4682B4; /* Vert Bleu Canard */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#password-screen button:hover {
+    background-color: #ff80a6; /* Change au rose au survol */
+    transform: scale(1.05);
+}
