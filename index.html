@@ -2,63 +2,260 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>PUPUCE 3.0 on the web</title>
+    <title>Pupuce 3.0 | Espace Privé Sarah & Moi</title>
     <link rel="stylesheet" href="style.css"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Styles spécifiques pour l'accueil (pour que ça ne soit plus vide) */
+        
+        /* Section du Chronomètre Principal */
+        .timer-section {
+            margin: 50px auto;
+            padding: 40px 20px;
+            background-color: #fce4ec; /* Rose très pâle, style mimi */
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        .timer-section h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff80a6; /* Rose vif */
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        
+        /* Styles pour l'affichage des unités de temps */
+        .timer-display {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Quicksand', sans-serif;
+            margin-bottom: 20px; /* Espace entre les deux chronomètres */
+        }
+        .time-unit {
+            background-color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            min-width: 100px;
+        }
+        .time-unit span {
+            display: block;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #4682B4; /* Vert Bleu Canard */
+            line-height: 1.1;
+        }
+        .time-unit p {
+            font-size: 0.9em;
+            color: #777;
+            margin: 5px 0 0;
+        }
+        
+        /* Millisecondes plus petites */
+        .milliseconds {
+            font-size: 1.5em !important;
+            color: #ff80a6 !important;
+            font-weight: 500 !important;
+        }
+        
+        /* STYLE SPÉCIFIQUE POUR LE CHRONOMÈTRE SECONDAIRE (LE VRAI) */
+        .secondary-timer {
+            opacity: 0.5; /* Opacité à 50% */
+            transform: scale(0.8); /* Le rendre un peu plus petit */
+            transition: opacity 0.3s;
+            margin-top: 10px;
+        }
+
+        .secondary-timer:hover {
+            opacity: 1; /* Révéler au survol (petit bonus) */
+        }
+
+    </style>
 </head>
 <body>
 
     <div id="password-screen">
-        <h2>Espace Privé - Entrez le code secret</h2>
-        <input type="password" id="password-input" placeholder="le code est facile et ya une majuscule">
-        <button onclick="checkPassword()">Accéder au site</button>
-        <p id="error-message" style="color: #c0392b; margin-top: 10px; display: none;">t nul, refais le bon code</p>
+        <h2>Bienvenue, Pupuce.</h2>
+        <input type="password" id="password-input" placeholder="Code Secret">
+        <button onclick="checkPassword()">Accéder</button>
+        <p style="color: #ff80a6; margin-top: 10px; font-weight: bold;" id="error-message"></p>
     </div>
-    <div id="site-content" style="display: none;">
+
+    <div id="main-content" style="display: none;">
+        
         <header>
-            <h1>>PUPUCE 3.0 on the web</h1>
-            <p> tema le site 😌 </p>
+            <h1>Bienvenue sur Pupuce 3.0</h1>
+            <p>L'Internet (très) privé de Sarah & Moi</p>
         </header>
 
         <nav class="menu">
             <a href="index.html">💖 ACCUEIL</a>
+            <a href="pages/vlog.html">🎬 VLOGS</a> 
             <a href="pages/souvenirs.html">📸 SOUVENIRS</a>
             <a href="pages/voyage.html">🗺️ PROJET VOYAGE</a>
-            <a href="pages/documents.html">📄 DOCUMENTS presque important</a>
+            <a href="pages/documents.html">📄 DOCUMENTS</a>
             <a href="pages/playlist.html">🎧 PLAYLIST</a>
         </nav>
-
+        
         <main>
-            <h2>mon amoureuuusee</h2>
-            <p>Petite site de pupuce parce que on est des jeune connectés</p>
-            <p>hm + que 3 x 7000</p>
+            <section class="timer-section">
+                <h2>Notre Amour en Chiffres</h2>
+                
+                <h3 style="color: #4682B4; font-size: 1.5em;">Politiquement Correct</h3>
+                <div id="timer-pc" class="timer-display">
+                    <div class="time-unit">
+                        <span id="years-pc">0</span>
+                        <p>Années</p>
+                    </div>
+                    <div class="time-unit">
+                        <span id="months-pc">0</span>
+                        <p>Mois</p>
+                    </div>
+                    <div class="time-unit">
+                        <span id="days-pc">0</span>
+                        <p>Jours</p>
+                    </div>
+                    <div class="time-unit">
+                        <span id="seconds-pc">0</span>
+                        <p>Secondes</p>
+                    </div>
+                    <div class="time-unit" style="min-width: 80px;">
+                        <span id="milliseconds-pc" class="milliseconds">000</span>
+                        <p>Millisecondes</p>
+                    </div>
+                </div>
+
+                <div class="secondary-timer">
+                    <h3 style="color: #ff80a6; font-size: 1em;">(Le vrai début)</h3>
+                    <div id="timer-real" class="timer-display">
+                        <div class="time-unit">
+                            <span id="years-real">0</span>
+                            <p>Ans</p>
+                        </div>
+                        <div class="time-unit">
+                            <span id="months-real">0</span>
+                            <p>Mois</p>
+                        </div>
+                        <div class="time-unit">
+                            <span id="days-real">0</span>
+                            <p>Jours</p>
+                        </div>
+                        <div class="time-unit">
+                            <span id="seconds-real">0</span>
+                            <p>Secondes</p>
+                        </div>
+                        <div class="time-unit" style="min-width: 60px;">
+                            <span id="milliseconds-real" class="milliseconds">000</span>
+                            <p>ms</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            
+            <section style="margin-top: 50px;">
+                <h2 style="font-size: 2em; color: #4682B4;">Le Mini-Bilan</h2>
+                <p>Bienvenue dans notre petit coin d'Internet. Tout est privé, fait avec amour, et surtout, mis à jour juste pour toi !</p>
+                <p>N'oublie pas d'aller voir les **Vlogs** et de laisser un message secret dans les **Documents**.</p>
+            </section>
+            
         </main>
     </div>
-    <script>
-        function checkPassword() {
-            // !!! LE CODE SECRET EST ICI : "Pupuce" !!!
-            const correctPassword = "Pupuce"; 
-            const enteredPassword = document.getElementById("password-input").value;
-            const content = document.getElementById("site-content");
-            const screen = document.getElementById("password-screen");
-            const error = document.getElementById("error-message");
 
-            if (enteredPassword === correctPassword) {
-                // Si le code est bon : cacher le formulaire et afficher le site
-                screen.style.display = 'none';
-                content.style.display = 'block';
-                // Mémoriser que le site est déverrouillé pour cette session
-                sessionStorage.setItem('unlocked', 'true'); 
+    <script>
+        const correctPassword = "Pupuce"; // Votre code secret
+
+        function checkPassword() {
+            const input = document.getElementById('password-input').value;
+            const errorMessage = document.getElementById('error-message');
+            
+            if (input === correctPassword) {
+                document.getElementById('password-screen').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+                localStorage.setItem('isAuthenticated', 'true');
+                startTimer(); // Démarre le chrono seulement après l'accès
             } else {
-                // Si le code est faux : afficher un message d'erreur
-                error.style.display = 'block';
+                errorMessage.textContent = "Code incorrect. Réessaye, ma chérie !";
             }
         }
-        // Vérifier si le site a déjà été déverrouillé dans cette session
-        if (sessionStorage.getItem('unlocked') === 'true') {
-            document.getElementById("password-screen").style.display = 'none';
-            document.getElementById("site-content").style.display = 'block';
+        
+        // Vérifie si l'utilisateur est déjà connecté (pour ne pas redemander le code)
+        if (localStorage.getItem('isAuthenticated') === 'true') {
+            document.getElementById('password-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            startTimer();
         }
+
+
+        // ===================================
+        // LOGIQUE DES CHRONOMÈTRES
+        // ===================================
+
+        // 1. DATE "POLITIQUEMENT CORRECTE" (25/04/2025)
+        // Mois commence à 0 (0 = Janvier, 3 = Avril)
+        const startDatePC = new Date(2025, 3, 25, 0, 0, 0); 
+        
+        // 2. DATE "LA VRAIE" (05/03/2025)
+        // Mois commence à 0 (0 = Janvier, 2 = Mars)
+        const startDateReal = new Date(2025, 2, 5, 0, 0, 0); 
+        
+        const second = 1000;
+        const minute = second * 60;
+        const hour = minute * 60;
+        const day = hour * 24;
+
+        function updateTimer(startDate, prefix) {
+            const now = new Date();
+            const difference = now.getTime() - startDate.getTime();
+
+            // Calcul du temps écoulé (Jours, Heures, etc.)
+            let d = Math.floor(difference / day);
+            let h = Math.floor((difference % day) / hour);
+            let m = Math.floor((difference % hour) / minute);
+            let s = Math.floor((difference % minute) / second);
+            let ms = Math.floor(difference % second);
+
+            // Calcul Années et Mois (plus complexe, basé sur les dates)
+            let dateYears = now.getFullYear() - startDate.getFullYear();
+            let dateMonths = now.getMonth() - startDate.getMonth();
+            let dateDays = now.getDate() - startDate.getDate();
+
+            if (dateDays < 0) {
+                dateMonths--;
+                const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                dateDays = lastMonth.getDate() + dateDays;
+            }
+
+            if (dateMonths < 0) {
+                dateYears--;
+                dateMonths += 12;
+            }
+
+            // Mise à jour de l'affichage
+            document.getElementById(`years-${prefix}`).innerText = String(dateYears).padStart(2, '0');
+            document.getElementById(`months-${prefix}`).innerText = String(dateMonths).padStart(2, '0');
+            
+            // Pour le chronomètre PC, on utilise les jours et secondes calculés précédemment.
+            document.getElementById(`days-${prefix}`).innerText = String(d).padStart(2, '0');
+
+            // On affiche seulement les Secondes et Millisecondes sur les deux chronos
+            document.getElementById(`seconds-${prefix}`).innerText = String(s).padStart(2, '0');
+            document.getElementById(`milliseconds-${prefix}`).innerText = String(ms).padStart(3, '0').slice(0, 3); 
+        }
+
+        function startTimer() {
+            // Fonction principale qui met à jour les deux chronomètres
+            function updateAllTimers() {
+                updateTimer(startDatePC, 'pc');
+                updateTimer(startDateReal, 'real');
+            }
+            
+            updateAllTimers(); 
+            // Exécute la fonction updateAllTimers toutes les 10 millisecondes
+            setInterval(updateAllTimers, 10);
+        }
+
     </script>
 </body>
 </html>
