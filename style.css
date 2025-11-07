@@ -1,224 +1,241 @@
-/* ----------------------------------------------------- */
-/* CSS COMPLET POUR SITE WEB PERSONNEL - THÈME "CHIC DOUX" */
-/* ----------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500;700&display=swap');
 
-/* Définition des Variables pour une gestion facile des couleurs */
-:root {
-    --color-base: #F8F8F0; /* Vert d'eau très très pâle / Blanc cassé - Background */
-    --color-primary: #5B9B9B; /* Vert Bleu Canard doux - Accents (boutons, titres) */
-    --color-secondary: #FFC0CB; /* Rose Pastel clair - Hover/Touches douces */
-    --color-text: #333333; /* Gris foncé - Texte */
-    --radius-main: 15px; /* Rayon de bordure généreux pour un aspect doux */
-    --shadow-light: 0 8px 20px rgba(0, 0, 0, 0.08); /* Ombre légère et diffuse */
-    --transition-speed: 0.35s ease-out; /* Transition plus douce */
-}
-
-/* ---------------------------------- */
-/* 1. STYLES DE BASE (BODY & TYPOGRAPHIE) */
-/* ---------------------------------- */
+/* ========================================= */
+/* --- 0. STYLES GÉNÉRAUX (FALLBACK) --- */
+/* ========================================= */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--color-base);
-    color: var(--color-text);
-    line-height: 1.6;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f7f7f7; /* Fond clair par défaut */
+    color: #4a4a4a;
     margin: 0;
-    padding: 30px 20px; 
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-h1, h2 {
-    color: var(--color-primary);
+    padding: 0;
     text-align: center;
-    margin-bottom: 0.5rem;
-    text-shadow: 1px 1px 3px rgba(91, 155, 155, 0.2);
+    transition: background-color 0.4s ease; /* Pour les transitions de thème */
 }
 
-h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3.5rem; /* Plus grand pour l'impact romantique */
-}
-
-h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 2rem;
-    color: var(--color-text);
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-h3 {
-    color: var(--color-primary);
-    font-weight: 500;
-    border-bottom: 2px solid var(--color-secondary);
-    padding-bottom: 5px;
-    margin-top: 2.5rem;
-}
-
-/* ---------------------------------- */
-/* 2. MISE EN PAGE PRINCIPALE (HEADER & MAIN) */
-/* ---------------------------------- */
-.container {
-    width: 100%;
-    max-width: 900px;
-}
-
+/* En-tête du Site par Défaut */
 header {
-    background-color: white;
-    padding: 30px 50px;
-    margin-bottom: 30px;
-    border-radius: var(--radius-main);
-    box-shadow: var(--shadow-light);
-    text-align: center;
+    background-color: #ff80a6; /* Rose vif par défaut (Thème Mimi) */
+    color: white;
+    padding: 60px 20px 40px;
+}
+h1 {
+    font-family: 'Dancing Script', cursive; /* Police romantique */
+    font-size: 3em;
+    margin-bottom: 5px;
 }
 
-main {
-    background-color: white;
-    padding: 50px;
-    border-radius: var(--radius-main);
-    box-shadow: var(--shadow-light);
-}
-
-/* Animation d'Arrivée Subtile pour le contenu */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-#site-content {
-    animation: fadeIn 1s ease-out forwards;
-}
-
-/* ---------------------------------- */
-/* 3. NAVIGATION (MENU) & BOUTONS */
-/* ---------------------------------- */
+/* Menu de Navigation Général */
 .menu {
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 25px;
+    flex-wrap: wrap; 
 }
-
-.menu a, .button {
-    display: inline-block;
-    padding: 12px 25px;
-    color: white;
-    background-color: var(--color-primary);
+.menu a {
     text-decoration: none;
-    border: none;
-    border-radius: var(--radius-main);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all var(--transition-speed);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    letter-spacing: 0.5px;
-    text-transform: uppercase; /* Moins "cucul" */
-    font-size: 0.9rem;
+    color: #4682B4; /* Vert Bleu Canard par défaut */
+    padding: 10px 15px;
+    margin: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+.menu a:hover {
+    color: #ff80a6; 
+    border-bottom: 2px solid #ff80a6;
 }
 
-/* Survol (Hover) : Couleur vers Rose Pastel et légère échelle */
-.menu a:hover, .button:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-text);
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(255, 192, 203, 0.7);
+/* Contenu Principal */
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    text-align: left;
 }
 
-/* ---------------------------------- */
-/* 4. RESPONSIVE / MOBILE */
-/* ---------------------------------- */
-@media (max-width: 768px) {
-    body {
-        padding: 15px;
-    }
-    h1 {
-        font-size: 2.8rem;
-    }
-    header, main {
-        padding: 25px;
-    }
-    .menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-    .menu a {
-        padding: 10px 15px;
-    }
+/* Liens de retour */
+.back-link {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    color: #4a4a4a;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
-@media (max-width: 480px) {
-    header, main {
-        padding: 20px;
-    }
-    h1 {
-        font-size: 2.2rem;
-    }
-    h2 {
-        font-size: 1.5rem;
-    }
-    .menu {
-        flex-direction: column;
-        gap: 8px;
-    }
-    .menu a, .button {
-        width: 100%;
-        text-align: center;
-    }
+.back-link:hover {
+    background-color: #e0e0e0;
 }
-/* --- STYLE SPÉCIFIQUE À L'ÉCRAN DE VERROUILLAGE --- */
+
+
+/* ========================================= */
+/* --- 1. STYLE ÉCRAN DE VERROUILLAGE --- */
+/* (Ce style est appliqué même sans classe de thème) */
+/* ========================================= */
 #password-screen {
-    /* Centrage et fond doux */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Prend toute la hauteur de l'écran */
-    background-color: #fce4ec; /* Arrière-plan rose très pâle */
+    min-height: 100vh; 
+    background-color: #fce4ec; 
     padding: 30px;
 }
 
 #password-screen h2 {
-    /* Titre mignon */
     font-family: 'Dancing Script', cursive; 
-    color: #ff80a6; /* Rose vif */
+    color: #ff80a6; 
     font-size: 2.2em;
     margin-bottom: 20px;
 }
 
 #password-input {
-    /* Champ de saisie arrondi et coloré */
     padding: 12px 20px;
     margin: 15px 0;
-    border: 3px solid #4682B4; /* Bordure Vert Bleu Canard */
-    border-radius: 25px; /* Très arrondi */
+    border: 3px solid #4682B4; 
+    border-radius: 25px; 
     width: 250px;
     text-align: center;
     font-size: 1.1em;
-    outline: none; /* Enlève la bordure par défaut au focus */
+    outline: none;
     transition: border-color 0.3s;
 }
 
-#password-input:focus {
-    border-color: #ff80a6; /* Change au rose au focus */
-}
-
 #password-screen button {
-    /* Bouton d'accès stylisé */
-    background-color: #4682B4; /* Vert Bleu Canard */
+    background-color: #4682B4; 
     color: white;
-    border: none;
     padding: 12px 30px;
     border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1em;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 #password-screen button:hover {
-    background-color: #ff80a6; /* Change au rose au survol */
+    background-color: #ff80a6; 
     transform: scale(1.05);
+}
+
+
+/* ========================================= */
+/* --- 2. THÈME NETFLIX (VLOGS) --- */
+/* ========================================= */
+.theme-netflix {
+    background-color: #141414; /* Fond Sombre */
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.theme-netflix main {
+    background-color: #141414;
+    box-shadow: none;
+}
+
+.theme-netflix h1, .theme-netflix h2, .theme-netflix h3, .theme-netflix p {
+    color: white;
+}
+
+.theme-netflix .menu a {
+    color: #b3b3b3; 
+}
+
+.theme-netflix .menu a:hover {
+    color: red; /* Rouge Netflix */
+    border-bottom-color: red;
+}
+
+.theme-netflix .video-card {
+    background-color: #222; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); 
+}
+
+
+/* ========================================= */
+/* --- 3. THÈME DEEZER (PLAYLIST) --- */
+/* ========================================= */
+.theme-deezer {
+    background-color: #121212; /* Très sombre */
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.theme-deezer main {
+    background-color: #1c1c1c; /* Gris foncé intérieur */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.theme-deezer h1, .theme-deezer h2, .theme-deezer h3 {
+    color: #efefef;
+}
+
+.theme-deezer .menu a {
+    color: #ff80a6; /* Utiliser le rose sur fond sombre */
+}
+
+.theme-deezer .menu a:hover {
+    color: #00c7a5; /* Vert/Cyan Deezer au survol */
+    border-bottom-color: #00c7a5;
+}
+
+
+/* ========================================= */
+/* --- 4. THÈME VOYAGE (KAYAK/BOOKING) --- */
+/* ========================================= */
+.theme-voyage {
+    background-color: #f7f7f7; 
+    color: #333;
+    font-family: 'Verdana', sans-serif;
+}
+
+.theme-voyage h1, .theme-voyage h3 {
+    color: #0077c2; /* Bleu ciel des sites de réservation */
+}
+
+.theme-voyage .travel-card {
+    border-left: 8px solid #ffcc00; /* Touche de jaune */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.theme-voyage .travel-details .status {
+    background-color: #0077c2; 
+    color: white;
+    border: none;
+}
+
+
+/* ========================================= */
+/* --- 5. THÈME ADMINISTRATION (DOCUMENTS) --- */
+/* ========================================= */
+.theme-admin {
+    background-color: #f4f4f9; 
+    color: #333;
+    font-family: 'Times New Roman', serif; /* Aspect document officiel */
+}
+
+.theme-admin main {
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.theme-admin h1 {
+    color: #0056b3; /* Bleu gouvernemental */
+    font-family: serif;
+    font-size: 2em;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 5px;
+}
+
+.theme-admin .content-section ul li {
+    list-style-type: square;
+    color: #0056b3;
 }
