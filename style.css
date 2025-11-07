@@ -159,6 +159,7 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grille adaptative */
     gap: 25px; 
     margin-top: 40px;
+    align-items: stretch;
 }
 
 .theme-netflix .video-card {
