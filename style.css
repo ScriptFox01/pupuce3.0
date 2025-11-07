@@ -153,9 +153,75 @@ main {
     border-bottom-color: red;
 }
 
+/* --- Styles Spécifiques aux Cartes Vlogs --- */
+.theme-netflix .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grille adaptative */
+    gap: 25px; 
+    margin-top: 40px;
+}
+
 .theme-netflix .video-card {
-    background-color: #222; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); 
+    background-color: #222; /* Fond sombre pour la carte */
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: left;
+    position: relative;
+    text-decoration: none; /* Enlève le soulignement du lien */
+    display: block; /* Important pour que la carte soit un bloc cliquable */
+}
+
+.theme-netflix .video-card:hover {
+    transform: scale(1.05); /* Agrandissement stylisé au survol */
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4); /* Ombre rouge Netflix */
+}
+
+.theme-netflix .video-card img {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover; 
+    display: block; 
+}
+
+.theme-netflix .video-info {
+    padding: 15px;
+}
+
+.theme-netflix .video-info h3 {
+    color: white; 
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.25em;
+}
+
+.theme-netflix .video-info p {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.theme-netflix .video-info .date {
+    font-size: 0.8em;
+    color: #888;
+    font-style: italic;
+}
+
+.theme-netflix .badge-new {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: red; /* Rouge Netflix */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 10; /* Assure que le badge est au-dessus de l'image */
 }
 
 
