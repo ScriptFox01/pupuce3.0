@@ -4,6 +4,371 @@
 /* --- 0. STYLES GÉNÉRAUX & STRUCTURE --- */
 /* ========================================= */
 body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f0; 
+    color: #212121;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1.05em;
+}
+
+header {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 60px 20px 40px;
+}
+h1 {
+    font-family: 'Quicksand', sans-serif; 
+    font-size: 3.5em;
+    margin-bottom: 5px;
+}
+
+/* Menu de Navigation */
+.menu {
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+.menu a {
+    text-decoration: none;
+    color: #1B5E20; 
+    padding: 10px 15px;
+    margin: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+.menu a:hover {
+    color: #ff80a6; 
+    border-bottom: 2px solid #ff80a6;
+}
+
+/* Contenu Principal */
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+/* ========================================= */
+/* --- 1. STYLE ÉCRAN DE VERROUILLAGE --- */
+/* ========================================= */
+#password-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    background-color: #E8F5E9; 
+}
+#password-screen h2 {
+    font-size: 3em; 
+    color: #1B5E20;
+    margin-bottom: 25px;
+}
+
+#password-input {
+    padding: 15px 25px; 
+    border: 3px solid #1B5E20; 
+    border-radius: 30px; 
+    width: 300px; 
+    font-size: 1.2em; 
+    margin-bottom: 20px;
+}
+
+#password-screen button {
+    background-color: #1B5E20; 
+    color: white;
+    padding: 15px 40px; 
+    border-radius: 30px; 
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+
+/* ========================================= */
+/* --- 2. THÈME NETFLIX (VLOGS) --- */
+/* ========================================= */
+.theme-netflix {
+    background-color: #141414;
+    color: white;
+    font-family: 'Quicksand', sans-serif; 
+}
+.theme-netflix main {
+    background-color: #141414;
+    box-shadow: none;
+    padding: 30px 5%;
+    max-width: none;
+    margin: 0;
+}
+.theme-netflix h1, .theme-netflix h2, .theme-netflix h3, .theme-netflix p {
+    color: white; /* Rétablit la couleur blanche du texte pour le thème sombre */
+}
+
+/* Grille Vlogs */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; 
+    margin-top: 40px;
+    align-items: stretch;
+}
+
+.video-card {
+    background-color: #222; 
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s;
+    text-decoration: none; 
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+    border: 3px solid transparent; 
+}
+
+.video-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    border: 3px solid #E50914; 
+}
+
+.video-card img {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover; 
+    display: block; 
+}
+
+.video-info {
+    padding: 15px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    min-height: 120px; 
+}
+
+.video-info p {
+    flex-grow: 1; 
+    margin-bottom: 10px;
+}
+
+.theme-netflix .badge-new {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #E50914; 
+    color: white;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+
+/* ========================================= */
+/* --- 3. THÈME SOUVENIRS (VERT MODERNE) --- */
+/* ========================================= */
+.theme-souvenirs {
+    background-color: #E8F5E9; 
+    color: #4a4a4a;
+}
+.theme-souvenirs main {
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+.theme-souvenirs h1, .theme-souvenirs h2, .theme-souvenirs h3 {
+    font-family: 'Quicksand', sans-serif; /* POLICE LISIBLE FIXÉE */
+    color: #4CAF50; 
+    font-size: 1.8em; 
+}
+
+/* Styles spécifiques à la galerie de photos (Souvenirs) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px; 
+    margin-top: 40px;
+}
+
+.gallery-item {
+    background-color: white; 
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+    display: flex; 
+    flex-direction: column; 
+    align-items: stretch; 
+}
+
+.gallery-item:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3); 
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    display: block; 
+}
+
+.gallery-caption {
+    padding: 15px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.gallery-caption h3 {
+    color: #ff80a6; /* Rétablit le rose pour les titres des souvenirs */
+    font-size: 1.2em;
+}
+
+.gallery-caption p {
+    font-size: 0.95em; 
+    color: #4CAF50; 
+    margin-bottom: 5px;
+    flex-grow: 1; 
+}
+
+
+/* ========================================= */
+/* --- 4. THÈME DEEZER (PLAYLIST) --- */
+/* ========================================= */
+.theme-deezer {
+    background-color: #121212; 
+    color: white;
+}
+.theme-deezer main {
+    background-color: #1c1c1c; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+}
+
+
+/* ========================================= */
+/* --- 5. THÈME VOYAGE (KAYAK/BOOKING) --- */
+/* ========================================= */
+.theme-voyage {
+    background-color: #f0f0f5; 
+    color: #333;
+    font-family: 'Verdana', sans-serif;
+}
+
+.theme-voyage main {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* Structure de la grille */
+.travel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    align-items: stretch; 
+}
+
+.travel-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative; 
+}
+
+.travel-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: left;
+    position: relative; 
+    min-height: 400px;
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* FIX IMAGES VOYAGE */
+.travel-card img {
+    width: 100%;
+    height: 200px; /* FIX: Retablir la hauteur pour que la description soit centree sur une base uniforme */
+    object-fit: cover; 
+    display: block;
+}
+
+/* Contenu textuel de la carte */
+.travel-details {
+    padding: 20px;
+    position: relative; 
+    flex-grow: 1;
+}
+
+/* HOVER DESCRIPTION (FIX CENTRAGE) */
+.travel-hover-desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 50, 80, 0.95); 
+    color: white;
+    padding: 30px;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+    
+    /* FIX CRITIQUE : CENTRAGE PARFAIT */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    
+    border-radius: 12px;
+    z-index: 10;
+}
+
+
+/* ========================================= */
+/* --- 6. THÈME ADMINISTRATION (DOCUMENTS) --- */
+/* ========================================= */
+.theme-admin {
+    background-color: #f4f4f9; 
+    color: #333;
+    font-family: 'Times New Roman', serif;
+}
+.theme-admin h1 {
+    color: #0056b3; 
+    border-bottom: 2px solid #0056b3;
+}
+.theme-admin main {
+    padding: 30px;
+}@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
+
+/* ========================================= */
+/* --- 0. STYLES GÉNÉRAUX & STRUCTURE --- */
+/* ========================================= */
+body {
     font-family: 'Roboto', sans-serif; 
     background-color: #f0f4f0; 
     color: #212121;
