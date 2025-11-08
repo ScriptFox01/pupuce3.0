@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Styles spécifiques pour le chronomètre (doivent rester ici) */
+        /* Styles spécifiques pour le chronomètre (doivent rester ici pour l'isolation) */
         .timer-section {
             margin: 50px auto;
             padding: 40px 20px;
@@ -15,12 +15,13 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
         .timer-section h2 {
-            font-family: 'Quicksand', sans-serif; /* Utilisé pour le titre de la section */
+            font-family: 'Quicksand', sans-serif;
             color: #4CAF50; 
             font-size: 2.5em;
             margin-bottom: 30px;
         }
         
+        /* Styles pour l'affichage des unités de temps */
         .timer-display {
             display: flex;
             justify-content: center;
@@ -153,7 +154,7 @@
             <section style="margin-top: 50px;">
                 <h2 style="font-size: 2em; color: #4CAF50;"> Mini-Bilan</h2>
                 <p>Bienvenue dans notre petit coin du "web" comme disent les jeunes. Fait avec amour, patience, Gemini et du temps (beaucoup trop) et il sera évolutif et mis à jour 😌 </p>
-                <p>C'est loin d'être parfait mais c'est fait avec le coeur promis , et puis c'est toi la pro du code de base c'est pas moi. ( tu as les accès depuis le début stv modifier des truc ou en ajouter il te suffit de te connecter à Github mdr)</p>
+                <p>C'est loin d'être parfait mais c'est fait avec le coeur promis, et puis c'est toi la pro du code de base c'est pas moi. ( tu as les accès depuis le début stv modifier des truc ou en ajouter il te suffit de te connecter à Github mdr)</p>
                 <p>Bref voilà j'espère ça te plaît :) </p>
             </section>
             
@@ -190,7 +191,7 @@
             }
         }
         
-        // --- FIX : Redémarrage du chronomètre si l'utilisateur revient sur la page ---
+        // FIX: La fonction onload est appelée au chargement initial et au retour à l'accueil
         window.onload = function() {
             if (sessionStorage.getItem('isAuthenticated') === 'true') {
                 document.getElementById('password-screen').style.display = 'none';
@@ -200,9 +201,10 @@
         };
 
         // ===================================
-        // LOGIQUE DES CHRONOMÈTRES (FIXÉE ET SIMPLIFIÉE)
+        // LOGIQUE DES CHRONOMÈTRES (FIXÉE)
         // ===================================
 
+        // FIX: Utilisation d'une fonction unique d'intervalle pour les deux chronos
         const startDatePC = new Date(2025, 3, 25, 0, 0, 0); 
         const startDateReal = new Date(2025, 2, 5, 0, 0, 0); 
         
@@ -232,13 +234,10 @@
             }
 
             // Calcul du temps écoulé (Secondes et Millisecondes)
-            let h = Math.floor((difference % day) / hour);
-            let m = Math.floor((difference % hour) / minute);
             let s = Math.floor((difference % minute) / second);
             let ms = Math.floor(difference % second);
 
             // Mise à jour de l'affichage
-            // Vérifie si les éléments existent avant de les mettre à jour
             if (document.getElementById(`years-${prefix}`)) {
                 document.getElementById(`years-${prefix}`).innerText = String(dateYears).padStart(2, '0');
                 document.getElementById(`months-${prefix}`).innerText = String(dateMonths).padStart(2, '0');
@@ -254,6 +253,7 @@
                 updateTimer(startDateReal, 'real');
             }
             
+            // Exécute la fonction updateAllTimers toutes les 10 millisecondes
             updateAllTimers(); 
             setInterval(updateAllTimers, 10);
         }
