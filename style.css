@@ -14,7 +14,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50; /* Vert dominant */
+    background-color: #4CAF50; 
     color: white;
     padding: 60px 20px 40px;
 }
@@ -91,7 +91,7 @@ main {
 
 
 /* ========================================= */
-/* --- 2. THÈME NETFLIX (VLOGS) --- (RÉTABLI ET FIXÉ) */
+/* --- 2. THÈME NETFLIX (VLOGS) --- */
 /* ========================================= */
 .theme-netflix {
     background-color: #141414;
@@ -154,7 +154,7 @@ main {
 }
 
 .video-info p {
-    color: #ccc; /* Rétablit la couleur du texte */
+    color: #ccc; 
     flex-grow: 1; 
     margin-bottom: 10px;
 }
@@ -175,7 +175,7 @@ main {
 
 
 /* ========================================= */
-/* --- 3. THÈME SOUVENIRS (VERT MODERNE FIXÉ) --- */
+/* --- 3. THÈME SOUVENIRS (VERT MODERNE) --- */
 /* ========================================= */
 .theme-souvenirs {
     background-color: #E8F5E9; 
@@ -235,7 +235,7 @@ main {
 }
 
 .gallery-caption h3 {
-    color: #ff80a6; /* Rétablit le rose pour les titres des souvenirs */
+    color: #ff80a6; 
     font-size: 1.2em;
     font-family: 'Quicksand', sans-serif; 
 }
@@ -263,12 +263,19 @@ main {
 
 
 /* ========================================= */
-/* --- 5. THÈME VOYAGE (KAYAK/BOOKING) --- */
+/* --- 5. THÈME VOYAGE (KAYAK/BOOKING) --- (FIXÉ) */
 /* ========================================= */
 .theme-voyage {
     background-color: #f0f0f5; 
     color: #333;
     font-family: 'Verdana', sans-serif;
+}
+
+.travel-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative; 
 }
 
 .travel-card {
