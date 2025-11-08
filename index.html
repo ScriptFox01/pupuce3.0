@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         /* Styles spécifiques pour le chronomètre (doivent rester ici) */
-        /* Section du Chronomètre Principal */
         .timer-section {
             margin: 50px auto;
             padding: 40px 20px;
@@ -15,7 +14,12 @@
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
-        /* ... (autres styles du chronomètre) ... */
+        .timer-section h2 {
+            font-family: 'Quicksand', sans-serif; /* Utilisé pour le titre de la section */
+            color: #4CAF50; 
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
         
         .timer-display {
             display: flex;
@@ -55,7 +59,6 @@
             transition: opacity 0.3s;
             margin-top: 10px;
         }
-
         .secondary-timer:hover {
             opacity: 1; 
         }
@@ -157,22 +160,13 @@
                 <h3>Documents & Promesses à ne pas oublier 📝</h3>
                 <p style="text-align: center; color: #555;">Ce sont les preuves d'achat et les promesses qui comptent le plus.</p>
                 <ul>
-                    <li>
-                        <a href="[LIEN VERS LE DOCUMENT PDF]" target="_blank">
-                            Contrat d'achat
-                        </a>
-                    </li>
-                    <li>
-                        <a href="[LIEN VERS LE SCREEN DE CONV 1]" target="_blank">
-                            Screen Promesse 1 (Ton message)
-                        </a>
-                    </li>
-                    <li>
-                        <a href="[LIEN VERS LE SCREEN DE CONV 2]" target="_blank">
-                            Screen Promesse 2 (Mon message)
-                        </a>
-                    </li>
-                    </ul>
+                    <li><a href="[LIEN VERS LE DOCUMENT PDF]" target="_blank">Documents</a></li>
+                    <li><a href="[LIEN VERS LA RÈGLE]" target="_blank">Règles</a></li>
+                    <li><a href="[LIEN VERS LE SCREEN DE CONV 1]" target="_blank">Screen</a></li>
+                    <li><a href="[LIEN VERS LE SCREEN DE CONV 2]" target="_blank">Screen encore</a></li>
+                    <li><a href="[LIEN VERS LE SCREEN DE CONV 3]" target="_blank">Screen toujours</a></li>
+                    <li><a href="[LIEN VERS LE SCREEN DE CONV 4]" target="_blank">Screen encore et toujours</a></li>
+                </ul>
             </section>
             
         </main>
@@ -195,11 +189,14 @@
             }
         }
         
-        if (sessionStorage.getItem('isAuthenticated') === 'true') {
-            document.getElementById('password-screen').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-            startTimer();
-        }
+        // --- FIX : Redémarrage du chronomètre si l'utilisateur revient sur la page ---
+        window.onload = function() {
+            if (sessionStorage.getItem('isAuthenticated') === 'true') {
+                document.getElementById('password-screen').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+                startTimer();
+            }
+        };
 
         // ===================================
         // LOGIQUE DES CHRONOMÈTRES (FIXÉE ET SIMPLIFIÉE)
@@ -240,11 +237,14 @@
             let ms = Math.floor(difference % second);
 
             // Mise à jour de l'affichage
-            document.getElementById(`years-${prefix}`).innerText = String(dateYears).padStart(2, '0');
-            document.getElementById(`months-${prefix}`).innerText = String(dateMonths).padStart(2, '0');
-            document.getElementById(`days-${prefix}`).innerText = String(dateDays).padStart(2, '0');
-            document.getElementById(`seconds-${prefix}`).innerText = String(s).padStart(2, '0');
-            document.getElementById(`milliseconds-${prefix}`).innerText = String(ms).padStart(3, '0').slice(0, 3);
+            // Vérifie si les éléments existent avant de les mettre à jour
+            if (document.getElementById(`years-${prefix}`)) {
+                document.getElementById(`years-${prefix}`).innerText = String(dateYears).padStart(2, '0');
+                document.getElementById(`months-${prefix}`).innerText = String(dateMonths).padStart(2, '0');
+                document.getElementById(`days-${prefix}`).innerText = String(dateDays).padStart(2, '0');
+                document.getElementById(`seconds-${prefix}`).innerText = String(s).padStart(2, '0');
+                document.getElementById(`milliseconds-${prefix}`).innerText = String(ms).padStart(3, '0').slice(0, 3);
+            }
         }
 
         function startTimer() {
