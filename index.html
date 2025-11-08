@@ -2,35 +2,28 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Pupuce 3.0 | </title>
+    <title>Pupuce 3.0 | Espace Privé Sarah & Moi</title>
     <link rel="stylesheet" href="style.css"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Styles spécifiques pour l'accueil (pour que ça ne soit plus vide) */
-        
+        /* Styles spécifiques pour le chronomètre (doivent rester ici) */
         /* Section du Chronomètre Principal */
         .timer-section {
             margin: 50px auto;
             padding: 40px 20px;
-            background-color: #fce4ec; /* Rose très pâle, style mimi */
+            background-color: #fce4ec; 
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
-        .timer-section h2 {
-            font-family: 'Dancing Script', cursive;
-            color: #ff80a6; /* Rose vif */
-            font-size: 2.5em;
-            margin-bottom: 30px;
-        }
+        /* ... (autres styles du chronomètre) ... */
         
-        /* Styles pour l'affichage des unités de temps */
         .timer-display {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 20px;
             font-family: 'Quicksand', sans-serif;
-            margin-bottom: 20px; /* Espace entre les deux chronomètres */
+            margin-bottom: 20px;
         }
         .time-unit {
             background-color: white;
@@ -43,7 +36,7 @@
             display: block;
             font-size: 2.5em;
             font-weight: 700;
-            color: #4682B4; /* Vert Bleu Canard */
+            color: #4682B4; 
             line-height: 1.1;
         }
         .time-unit p {
@@ -51,26 +44,57 @@
             color: #777;
             margin: 5px 0 0;
         }
-        
-        /* Millisecondes plus petites */
         .milliseconds {
             font-size: 1.5em !important;
             color: #ff80a6 !important;
             font-weight: 500 !important;
         }
-        
-        /* STYLE SPÉCIFIQUE POUR LE CHRONOMÈTRE SECONDAIRE (LE VRAI) */
         .secondary-timer {
-            opacity: 0.5; /* Opacité à 50% */
-            transform: scale(0.8); /* Le rendre un peu plus petit */
+            opacity: 0.5;
+            transform: scale(0.8);
             transition: opacity 0.3s;
             margin-top: 10px;
         }
 
         .secondary-timer:hover {
-            opacity: 1; /* Révéler au survol (petit bonus) */
+            opacity: 1; 
         }
-
+        
+        /* Styles pour la nouvelle section documents (liens) */
+        .documents-section {
+            border: 2px dashed #4CAF50;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+            background-color: #f9f9f9;
+        }
+        .documents-section h3 {
+            color: #1B5E20;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        .documents-section ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .documents-section li {
+            margin: 10px;
+        }
+        .documents-section a {
+            color: #1B5E20;
+            text-decoration: underline;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        .documents-section a:hover {
+            color: #ff80a6; 
+        }
     </style>
 </head>
 <body>
@@ -86,7 +110,7 @@
         
         <header>
             <h1>Bienvenue sur Pupuce 3.0</h1>
-            <p>L'Internet des pupuces ( et oui on est connecté) </p>
+            <p>L'Internet des pupuces (et oui on est connecté)</p>
         </header>
 
         <nav class="menu">
@@ -94,7 +118,6 @@
             <a href="pages/vlog.html">🎬 VLOGS</a> 
             <a href="pages/souvenirs.html">📸 SOUVENIRS</a>
             <a href="pages/voyage.html">🗺️ PROJET VOYAGE</a>
-            <a href="pages/documents.html">📄 DOCUMENTS</a>
             <a href="pages/playlist.html">🎧 PLAYLIST</a>
         </nav>
         
@@ -104,67 +127,59 @@
                 
                 <h3 style="color: #4682B4; font-size: 1.5em;">Politiquement Correct</h3>
                 <div id="timer-pc" class="timer-display">
-                    <div class="time-unit">
-                        <span id="years-pc">0</span>
-                        <p>Années</p>
-                    </div>
-                    <div class="time-unit">
-                        <span id="months-pc">0</span>
-                        <p>Mois</p>
-                    </div>
-                    <div class="time-unit">
-                        <span id="days-pc">0</span>
-                        <p>Jours</p>
-                    </div>
-                    <div class="time-unit">
-                        <span id="seconds-pc">0</span>
-                        <p>Secondes</p>
-                    </div>
-                    <div class="time-unit" style="min-width: 80px;">
-                        <span id="milliseconds-pc" class="milliseconds">000</span>
-                        <p>Millisecondes</p>
-                    </div>
+                    <div class="time-unit"><span id="years-pc">0</span><p>Années</p></div>
+                    <div class="time-unit"><span id="months-pc">0</span><p>Mois</p></div>
+                    <div class="time-unit"><span id="days-pc">0</span><p>Jours</p></div>
+                    <div class="time-unit"><span id="seconds-pc">0</span><p>Secondes</p></div>
+                    <div class="time-unit" style="min-width: 80px;"><span id="milliseconds-pc" class="milliseconds">000</span><p>Millisecondes</p></div>
                 </div>
 
                 <div class="secondary-timer">
                     <h3 style="color: #ff80a6; font-size: 1em;">(chut)</h3>
                     <div id="timer-real" class="timer-display">
-                        <div class="time-unit">
-                            <span id="years-real">0</span>
-                            <p>Ans</p>
-                        </div>
-                        <div class="time-unit">
-                            <span id="months-real">0</span>
-                            <p>Mois</p>
-                        </div>
-                        <div class="time-unit">
-                            <span id="days-real">0</span>
-                            <p>Jours</p>
-                        </div>
-                        <div class="time-unit">
-                            <span id="seconds-real">0</span>
-                            <p>Secondes</p>
-                        </div>
-                        <div class="time-unit" style="min-width: 60px;">
-                            <span id="milliseconds-real" class="milliseconds">000</span>
-                            <p>ms</p>
-                        </div>
+                        <div class="time-unit"><span id="years-real">0</span><p>Ans</p></div>
+                        <div class="time-unit"><span id="months-real">0</span><p>Mois</p></div>
+                        <div class="time-unit"><span id="days-real">0</span><p>Jours</p></div>
+                        <div class="time-unit"><span id="seconds-real">0</span><p>Secondes</p></div>
+                        <div class="time-unit" style="min-width: 60px;"><span id="milliseconds-real" class="milliseconds">000</span><p>ms</p></div>
                     </div>
                 </div>
                 
             </section>
             
             <section style="margin-top: 50px;">
-                <h2 style="font-size: 2em; color: #4682B4;"> Mini-Bilan</h2>
-                <p>Bienvenue dans notre petit coin du "web"comme disent les jeunes. Fait avec amour, patiente, gemini et du temps (beaucoup trop) et il sera évolutif et mis à jour 😌 </p>
+                <h2 style="font-size: 2em; color: #4CAF50;"> Mini-Bilan</h2>
+                <p>Bienvenue dans notre petit coin du "web" comme disent les jeunes. Fait avec amour, patience, Gemini et du temps (beaucoup trop) et il sera évolutif et mis à jour 😌 </p>
                 <p>Bref voilà j'espère ça te plaît :) </p>
+            </section>
+            
+            <section class="documents-section">
+                <h3>Documents & Promesses à ne pas oublier 📝</h3>
+                <p style="text-align: center; color: #555;">Ce sont les preuves d'achat et les promesses qui comptent le plus.</p>
+                <ul>
+                    <li>
+                        <a href="[LIEN VERS LE DOCUMENT PDF]" target="_blank">
+                            Contrat d'achat
+                        </a>
+                    </li>
+                    <li>
+                        <a href="[LIEN VERS LE SCREEN DE CONV 1]" target="_blank">
+                            Screen Promesse 1 (Ton message)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="[LIEN VERS LE SCREEN DE CONV 2]" target="_blank">
+                            Screen Promesse 2 (Mon message)
+                        </a>
+                    </li>
+                    </ul>
             </section>
             
         </main>
     </div>
 
     <script>
-        const correctPassword = "Pupuce"; // Votre code secret
+        const correctPassword = "Pupuce"; 
 
         function checkPassword() {
             const input = document.getElementById('password-input').value;
@@ -173,31 +188,24 @@
             if (input === correctPassword) {
                 document.getElementById('password-screen').style.display = 'none';
                 document.getElementById('main-content').style.display = 'block';
-                localStorage.setItem('isAuthenticated', 'true');
-                startTimer(); // Démarre le chrono seulement après l'accès
+                sessionStorage.setItem('isAuthenticated', 'true');
+                startTimer(); 
             } else {
                 errorMessage.textContent = "Code incorrect. Réessaye, ma chérie !";
             }
         }
         
-        // Vérifie si l'utilisateur est déjà connecté (pour ne pas redemander le code)
-        if (localStorage.getItem('isAuthenticated') === 'true') {
+        if (sessionStorage.getItem('isAuthenticated') === 'true') {
             document.getElementById('password-screen').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
             startTimer();
         }
 
-
         // ===================================
-        // LOGIQUE DES CHRONOMÈTRES
+        // LOGIQUE DES CHRONOMÈTRES (FIXÉE ET SIMPLIFIÉE)
         // ===================================
 
-        // 1. DATE "POLITIQUEMENT CORRECTE" (25/04/2025)
-        // Mois commence à 0 (0 = Janvier, 3 = Avril)
         const startDatePC = new Date(2025, 3, 25, 0, 0, 0); 
-        
-        // 2. DATE "LA VRAIE" (05/03/2025)
-        // Mois commence à 0 (0 = Janvier, 2 = Mars)
         const startDateReal = new Date(2025, 2, 5, 0, 0, 0); 
         
         const second = 1000;
@@ -209,14 +217,7 @@
             const now = new Date();
             const difference = now.getTime() - startDate.getTime();
 
-            // Calcul du temps écoulé (Jours, Heures, etc.)
-            let d = Math.floor(difference / day);
-            let h = Math.floor((difference % day) / hour);
-            let m = Math.floor((difference % hour) / minute);
-            let s = Math.floor((difference % minute) / second);
-            let ms = Math.floor(difference % second);
-
-            // Calcul Années et Mois (plus complexe, basé sur les dates)
+            // Calcul Années et Mois (basé sur les dates)
             let dateYears = now.getFullYear() - startDate.getFullYear();
             let dateMonths = now.getMonth() - startDate.getMonth();
             let dateDays = now.getDate() - startDate.getDate();
@@ -232,27 +233,27 @@
                 dateMonths += 12;
             }
 
+            // Calcul du temps écoulé (Secondes et Millisecondes)
+            let h = Math.floor((difference % day) / hour);
+            let m = Math.floor((difference % hour) / minute);
+            let s = Math.floor((difference % minute) / second);
+            let ms = Math.floor(difference % second);
+
             // Mise à jour de l'affichage
             document.getElementById(`years-${prefix}`).innerText = String(dateYears).padStart(2, '0');
             document.getElementById(`months-${prefix}`).innerText = String(dateMonths).padStart(2, '0');
-            
-            // Pour le chronomètre PC, on utilise les jours et secondes calculés précédemment.
-            document.getElementById(`days-${prefix}`).innerText = String(d).padStart(2, '0');
-
-            // On affiche seulement les Secondes et Millisecondes sur les deux chronos
+            document.getElementById(`days-${prefix}`).innerText = String(dateDays).padStart(2, '0');
             document.getElementById(`seconds-${prefix}`).innerText = String(s).padStart(2, '0');
-            document.getElementById(`milliseconds-${prefix}`).innerText = String(ms).padStart(3, '0').slice(0, 3); 
+            document.getElementById(`milliseconds-${prefix}`).innerText = String(ms).padStart(3, '0').slice(0, 3);
         }
 
         function startTimer() {
-            // Fonction principale qui met à jour les deux chronomètres
             function updateAllTimers() {
                 updateTimer(startDatePC, 'pc');
                 updateTimer(startDateReal, 'real');
             }
             
             updateAllTimers(); 
-            // Exécute la fonction updateAllTimers toutes les 10 millisecondes
             setInterval(updateAllTimers, 10);
         }
 
