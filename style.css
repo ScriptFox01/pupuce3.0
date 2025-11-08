@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500;700&family=Netflix+Sans:wght@400;700&display=swap'); /* Ajout de Netflix Sans */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500;700&display=swap');
 
 /* ========================================= */
 /* --- 0. STYLES GÉNÉRAUX & STRUCTURE --- */
@@ -52,7 +52,7 @@ h1 {
 main {
     max-width: 1100px;
     margin: 30px auto;
-    padding: 30px;
+    padding: 30px; /* Padding restauré */
     background: white;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
@@ -70,8 +70,6 @@ main {
     text-decoration: none;
     border-radius: 8px;
     transition: background-color 0.3s;
-    z-index: 100; /* Assure que le bouton est cliquable */
-    position: relative; /* Permet un z-index */
 }
 
 /* ========================================= */
@@ -102,176 +100,50 @@ main {
 
 
 /* ========================================= */
-/* --- 2. THÈME NETFLIX (VLOGS) --- */
+/* --- 2. THÈME VLOGS (GRILLE MODERNE) --- */
 /* ========================================= */
 .theme-netflix {
-    background-color: #141414; 
+    background-color: #141414; /* Fond sombre conservé */
     color: white;
-    font-family: 'Netflix Sans', Arial, sans-serif; /* Utilisation de la police Netflix */
+    font-family: 'Quicksand', sans-serif; /* Police standard conservée */
 }
 .theme-netflix main {
     background-color: #141414;
     box-shadow: none;
-    padding: 0; /* Retirer le padding de main pour le hero */
+    padding: 30px 5%; /* Padding restauré, mais centré */
+    max-width: none;
+    margin: 0;
 }
 .theme-netflix h1, .theme-netflix h2, .theme-netflix h3, .theme-netflix p {
     color: white;
 }
 
-/* --- SECTION HAUT DE PAGE (HERO) --- */
-.hero-section {
-    position: relative;
-    width: 100%;
-    height: 600px; /* Hauteur du grand "poster" */
-    overflow: hidden;
-    margin-bottom: 40px;
-}
-
-.hero-section img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(20,20,20,1) 0%, rgba(20,20,20,0.5) 40%, rgba(20,20,20,0.1) 60%, rgba(20,20,20,0.8) 100%);
-    z-index: 2;
-}
-
-.hero-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 60px 5%; /* Ajuster le padding pour les côtés */
-    max-width: 50%; /* Limiter la largeur du texte */
-    text-align: left;
-    z-index: 3;
-    transform: translateY(-20%); /* Remonter un peu le contenu */
-}
-
-.hero-content .logo {
-    font-family: 'Netflix Sans', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 4em;
-    color: #E50914; /* Rouge Netflix */
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-}
-
-.hero-content h2 {
-    font-size: 2.8em;
-    margin-bottom: 15px;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-}
-
-.hero-content p {
-    font-size: 1.1em;
-    line-height: 1.5;
-    color: #e0e0e0;
-    margin-bottom: 25px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.hero-buttons button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.hero-buttons .play-button {
-    background-color: white;
-    color: black;
-}
-.hero-buttons .play-button:hover {
-    background-color: rgba(255,255,255,0.75);
-}
-
-.hero-buttons .info-button {
-    background-color: rgba(109,109,110,0.7);
-    color: white;
-}
-.hero-buttons .info-button:hover {
-    background-color: rgba(109,109,110,0.5);
-}
-
-.hero-buttons button i {
-    font-size: 1.2em;
-}
-
-/* --- GRILLE DE VLOGS (ROW) --- */
-.vlog-row-title {
-    font-size: 1.6em;
-    font-weight: bold;
-    color: white;
-    text-align: left;
-    margin-left: 5%;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 10;
-}
-
+/* Grille Vlogs (Grille simple, centrée) */
 .video-grid {
-    display: flex; /* Utiliser flexbox pour la rangée horizontale */
-    overflow-x: auto; /* Permet le défilement horizontal */
-    scroll-snap-type: x mandatory; /* Améliore le défilement */
-    gap: 15px;
-    padding: 0 5%; /* Padding sur les côtés pour correspondre au hero */
-    padding-bottom: 30px;
-    -webkit-overflow-scrolling: touch; /* Pour un défilement fluide sur iOS */
-    position: relative;
-    z-index: 10;
-}
-
-.video-grid::-webkit-scrollbar {
-    height: 8px;
-}
-
-.video-grid::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; 
+    margin-top: 40px;
+    align-items: stretch; /* FIXE LE DÉCALAGE EN HAUT */
 }
 
 .video-card {
-    flex: 0 0 auto; /* Empêche les cartes de se rétrécir */
-    width: 280px; /* Largeur fixe pour chaque carte */
     background-color: #222; 
-    border-radius: 8px; /* Rayon de bordure légèrement réduit */
+    border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     overflow: hidden; 
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s;
     text-decoration: none; 
     display: flex; 
     flex-direction: column;
-    position: relative; /* Pour positionner le badge */
-    scroll-snap-align: start;
+    position: relative; 
+    border: 3px solid transparent; /* Bordure invisible par défaut */
 }
 
 .video-card:hover {
     transform: scale(1.05); /* Zoom au survol */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
-    border: 3px solid #E50914; /* Bordure rouge au survol */
+    border: 3px solid #E50914; /* Bordure rouge au survol (Effet Netflix simple) */
 }
 
 .video-card img {
@@ -287,28 +159,12 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
-    min-height: 120px; 
-    text-align: left;
-}
-
-.video-info h3 {
-    font-size: 1.2em;
-    margin-top: 0;
-    margin-bottom: 8px;
+    min-height: 120px; /* GARANTIT LA HAUTEUR MINIMALE CONTRE LE DÉCALAGE */
 }
 
 .video-info p {
-    font-size: 0.9em;
-    line-height: 1.4;
-    color: #aaa;
     flex-grow: 1; 
     margin-bottom: 10px;
-}
-
-.video-info .date {
-    font-size: 0.8em;
-    color: #777;
-    margin-top: auto; /* Pousse la date en bas */
 }
 
 /* Badge "Nouveau" */
@@ -316,7 +172,7 @@ main {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #E50914; /* Rouge Netflix */
+    background-color: #E50914; 
     color: white;
     padding: 4px 8px;
     border-radius: 3px;
@@ -325,6 +181,7 @@ main {
     text-transform: uppercase;
     z-index: 10; 
 }
+
 
 /* ========================================= */
 /* --- 3. THÈME MIMI (SOUVENIRS) --- */
@@ -336,13 +193,14 @@ main {
 .theme-mimi main {
     background-color: white;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px; /* Restaurer le padding pour les pages normales */
+    padding: 30px; 
 }
 .theme-mimi h1, .theme-mimi h2, .theme-mimi h3 {
     font-family: 'Dancing Script', cursive; 
     color: #ff80a6; 
 }
 
+/* Styles spécifiques à la galerie de photos (Souvenirs) */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -356,9 +214,7 @@ main {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden; 
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    cursor: pointer;
-    text-align: left;
-    text-decoration: none;
+    text-decoration: none; 
     display: flex; 
     flex-direction: column; 
     align-items: stretch; 
@@ -402,19 +258,8 @@ main {
 .theme-deezer main {
     background-color: #1c1c1c; 
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    padding: 30px; /* Restaurer le padding pour les pages normales */
+    padding: 30px;
 }
-.theme-deezer h1, .theme-deezer h2, .theme-deezer h3 {
-    color: #efefef;
-}
-.theme-deezer .menu a {
-    color: #ff80a6;
-}
-.theme-deezer .menu a:hover {
-    color: #00c7a5; 
-    border-bottom-color: #00c7a5;
-}
-
 
 /* ========================================= */
 /* --- 5. THÈME VOYAGE (KAYAK/BOOKING) --- */
@@ -424,17 +269,9 @@ main {
     color: #333;
     font-family: 'Verdana', sans-serif;
 }
-.theme-voyage h1, .theme-voyage h3 {
-    color: #0077c2;
+.theme-voyage main {
+    padding: 30px;
 }
-.theme-voyage .travel-card {
-    border-left: 8px solid #ffcc00; 
-}
-.theme-voyage .travel-details .status {
-    background-color: #0077c2; 
-    color: white;
-}
-
 
 /* ========================================= */
 /* --- 6. THÈME ADMINISTRATION (DOCUMENTS) --- */
@@ -444,7 +281,6 @@ main {
     color: #333;
     font-family: 'Times New Roman', serif;
 }
-.theme-admin h1 {
-    color: #0056b3; 
-    border-bottom: 2px solid #0056b3;
+.theme-admin main {
+    padding: 30px;
 }
