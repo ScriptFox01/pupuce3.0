@@ -70,11 +70,6 @@ main {
     min-height: 100vh; 
     background-color: #E8F5E9; 
 }
-#password-screen h2 {
-    font-size: 3em; 
-    color: #1B5E20;
-    margin-bottom: 25px;
-}
 
 #password-input {
     padding: 15px 25px; 
@@ -96,7 +91,7 @@ main {
 
 
 /* ========================================= */
-/* --- 2. THÈME NETFLIX (VLOGS) --- */
+/* --- 2. THÈME NETFLIX (VLOGS) --- (RÉTABLI) */
 /* ========================================= */
 .theme-netflix {
     background-color: #141414;
@@ -111,7 +106,7 @@ main {
     margin: 0;
 }
 .theme-netflix h1, .theme-netflix h2, .theme-netflix h3, .theme-netflix p {
-    color: white; /* Rétablit la couleur blanche du texte pour le thème sombre */
+    color: white;
 }
 
 /* Grille Vlogs */
@@ -163,7 +158,7 @@ main {
     margin-bottom: 10px;
 }
 
-.theme-netflix .badge-new {
+.badge-new {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -179,7 +174,7 @@ main {
 
 
 /* ========================================= */
-/* --- 3. THÈME SOUVENIRS (VERT MODERNE) --- */
+/* --- 3. THÈME SOUVENIRS (MISE À JOUR FIXÉE) --- */
 /* ========================================= */
 .theme-souvenirs {
     background-color: #E8F5E9; 
@@ -191,7 +186,7 @@ main {
     padding: 30px;
 }
 .theme-souvenirs h1, .theme-souvenirs h2, .theme-souvenirs h3 {
-    font-family: 'Quicksand', sans-serif; /* POLICE LISIBLE FIXÉE */
+    font-family: 'Quicksand', sans-serif; 
     color: #4CAF50; 
     font-size: 1.8em; 
 }
@@ -239,7 +234,7 @@ main {
 }
 
 .gallery-caption h3 {
-    color: #ff80a6; /* Rétablit le rose pour les titres des souvenirs */
+    color: #ff80a6; /* Rose pour les titres des souvenirs (Rétabli) */
     font-size: 1.2em;
 }
 
@@ -305,14 +300,19 @@ main {
     text-align: left;
     position: relative; 
     min-height: 400px;
-    display: flex; 
+    display: flex;
     flex-direction: column; 
 }
 
-/* FIX IMAGES VOYAGE */
+/* Effet de zoom au survol */
+.travel-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
 .travel-card img {
     width: 100%;
-    height: 200px; /* FIX: Retablir la hauteur pour que la description soit centree sur une base uniforme */
+    height: auto; 
     object-fit: cover; 
     display: block;
 }
@@ -337,7 +337,7 @@ main {
     opacity: 0; 
     transition: opacity 0.3s ease;
     
-    /* FIX CRITIQUE : CENTRAGE PARFAIT */
+    /* FIX CRITIQUE POUR LE CENTRAGE PARFAIT */
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -351,271 +351,6 @@ main {
 
 /* ========================================= */
 /* --- 6. THÈME ADMINISTRATION (DOCUMENTS) --- */
-/* ========================================= */
-.theme-admin {
-    background-color: #f4f4f9; 
-    color: #333;
-    font-family: 'Times New Roman', serif;
-}
-.theme-admin h1 {
-    color: #0056b3; 
-    border-bottom: 2px solid #0056b3;
-}
-.theme-admin main {
-    padding: 30px;
-}@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
-
-/* ========================================= */
-/* --- 0. STYLES GÉNÉRAUX & STRUCTURE --- */
-/* ========================================= */
-body {
-    font-family: 'Roboto', sans-serif; 
-    background-color: #f0f4f0; 
-    color: #212121;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-size: 1.05em;
-}
-
-header {
-    background-color: #4CAF50; 
-    color: white;
-    padding: 60px 20px 40px;
-}
-h1 {
-    font-family: 'Quicksand', sans-serif; 
-    font-size: 3.5em;
-    margin-bottom: 5px;
-}
-
-/* Menu de Navigation */
-.menu {
-    background-color: white;
-    padding: 15px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; 
-}
-.menu a {
-    text-decoration: none;
-    color: #1B5E20; 
-    padding: 10px 15px;
-    margin: 5px 10px;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s;
-    font-weight: 600;
-}
-.menu a:hover {
-    color: #ff80a6; 
-    border-bottom: 2px solid #ff80a6;
-}
-
-/* Contenu Principal */
-main {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-    text-align: left;
-}
-
-/* ========================================= */
-/* --- 1. STYLE ÉCRAN DE VERROUILLAGE --- */
-/* (Styles conservés) */
-/* ========================================= */
-#password-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; 
-    background-color: #E8F5E9; 
-}
-
-#password-input {
-    padding: 15px 25px; 
-    border: 3px solid #1B5E20; 
-    border-radius: 30px; 
-    width: 300px; 
-    font-size: 1.2em; 
-    margin-bottom: 20px;
-}
-
-#password-screen button {
-    background-color: #1B5E20; 
-    color: white;
-    padding: 15px 40px; 
-    border-radius: 30px; 
-    font-size: 1.1em;
-    cursor: pointer;
-}
-
-
-/* ========================================= */
-/* --- 2. THÈME NETFLIX (VLOGS) --- */
-/* (Styles conservés) */
-/* ========================================= */
-.theme-netflix {
-    background-color: #141414;
-    color: white;
-    font-family: 'Quicksand', sans-serif; 
-}
-.theme-netflix main {
-    background-color: #141414;
-    box-shadow: none;
-    padding: 30px 5%;
-    max-width: none;
-    margin: 0;
-}
-/* ... (autres styles Netflix conservés) ... */
-
-
-/* ========================================= */
-/* --- 3. THÈME SOUVENIRS (VERT MODERNE) --- */
-/* (Styles conservés) */
-/* ========================================= */
-.theme-souvenirs {
-    background-color: #E8F5E9; 
-    color: #4a4a4a;
-}
-.theme-souvenirs main {
-    background-color: white;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-}
-.theme-souvenirs h1, .theme-souvenirs h2, .theme-souvenirs h3 {
-    font-family: 'Quicksand', sans-serif;
-    color: #4CAF50; 
-    font-size: 1.8em; 
-}
-/* ... (autres styles Souvenirs conservés) ... */
-
-
-/* ========================================= */
-/* --- 4. THÈME DEEZER (PLAYLIST) --- */
-/* (Styles conservés) */
-/* ========================================= */
-.theme-deezer {
-    background-color: #121212; 
-    color: white;
-}
-.theme-deezer main {
-    background-color: #1c1c1c; 
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    padding: 30px;
-}
-
-
-/* ========================================= */
-/* --- 5. THÈME VOYAGE (KAYAK/BOOKING) --- (FIX DE DÉFORMATION) */
-/* ========================================= */
-.theme-voyage {
-    background-color: #f0f0f5; 
-    color: #333;
-    font-family: 'Verdana', sans-serif;
-}
-
-.theme-voyage main {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-}
-
-/* Structure de la grille */
-.travel-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-    align-items: stretch; /* FIX alignement vertical */
-}
-
-.travel-card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    position: relative; 
-}
-
-.travel-card {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    text-align: left;
-    position: relative; 
-    min-height: 400px;
-    
-    /* FIX DÉFORMATION : Permet aux éléments de se répartir sans étirer les images */
-    display: flex; 
-    flex-direction: column; 
-}
-
-/* Effet de zoom au survol */
-.travel-card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* FIX IMAGES DÉFORMÉES : Les images doivent occuper 100% de la largeur du parent */
-.travel-card img {
-    width: 100%;
-    height: auto; /* Retirer la hauteur fixe de 200px pour éviter la déformation verticale */
-    object-fit: cover; 
-    display: block;
-}
-
-/* Contenu textuel de la carte */
-.travel-details {
-    padding: 20px;
-    position: relative; 
-    flex-grow: 1; /* Permet aux détails de prendre l'espace restant */
-}
-
-/* --- HOVER DESCRIPTION (FIX CENTRAGE) --- */
-.travel-hover-desc {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 50, 80, 0.95); 
-    color: white;
-    padding: 30px;
-    opacity: 0; 
-    transition: opacity 0.3s ease;
-    
-    /* FIX CRITIQUE : CENTRAGE PARFAIT */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    
-    border-radius: 12px;
-    z-index: 10;
-}
-
-.travel-card:hover .travel-hover-desc {
-    opacity: 1; /* Apparaît au survol */
-}
-
-.travel-hover-desc p {
-    font-size: 1.05em;
-    line-height: 1.6;
-    margin: 10px 0;
-}
-
-
-/* ========================================= */
-/* --- 6. THÈME ADMINISTRATION (DOCUMENTS) --- */
-/* (Styles conservés) */
 /* ========================================= */
 .theme-admin {
     background-color: #f4f4f9; 
