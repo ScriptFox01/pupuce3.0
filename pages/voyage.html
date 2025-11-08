@@ -5,122 +5,151 @@
     <title>Projets Voyage 🗺️</title>
     <link rel="stylesheet" href="../style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Styles spécifiques aux cartes Voyage */
-        .travel-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-            margin-top: 40px;
-        }
-
-        .travel-card {
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            text-align: left;
-            border: 1px solid #e0e0e0; /* Bordure très fine */
-            cursor: pointer;
-        }
-
-        .travel-card:hover {
-            transform: translateY(-10px); /* Montre l'animation fluide */
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
-        }
-
-        .travel-card img {
-            width: 100%;
-            height: 200px; /* Taille fixe pour l'uniformité du site de réservation */
-            object-fit: cover; /* Assure que l'image couvre la zone */
-        }
-
-        .travel-details {
-            padding: 20px;
-        }
-
-        .travel-details h3 {
-            color: #ff80a6; /* Rose Vif pour le titre de la destination */
-            margin-top: 0;
-            font-size: 1.6em;
-            font-family: 'Dancing Script', cursive;
-        }
-
-        .travel-details p {
-            font-size: 1em;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .travel-details .status {
-            font-weight: bold;
-            color: #4682B4; /* Vert Bleu Canard */
-            border: 2px solid #4682B4;
-            padding: 5px 10px;
-            border-radius: 20px;
-            display: inline-block;
-            font-size: 0.9em;
-        }
-    </style>
 </head>
-<body class="theme-voyage">dy>
+<body class="theme-voyage"> 
     <a href="../index.html" class="back-link">← Retour à l'Accueil</a>
 
     <main>
         <h1>🗺️ Nos Projets Voyage : Réservez-moi !</h1>
-        <p>Clique sur la carte qui te fait le plus rêver. Ces voyages sont en attente d'une date de départ !</p>
+        <p>Toutes nos prochaines aventures ensemble. </p>
         
         <div class="travel-grid">
             
             <div class="travel-card">
-                <img src="https://images.unsplash.com/photo-1549477028-1b22e1b6f6f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjU2OHwwfDF8c2VhcmNofDE3fHxicmF6aWx8ZW58MHx8fHwxNjMzMzkzMDYw&ixlib=rb-1.2.1&q=80&w=400" alt="Plage du Brésil">
-                <div class="travel-details">
-                    <h3>Brésil 🇧🇷</h3>
-                    <p>Le rythme de la samba et les plages incroyables. On pourrait apprendre à danser ensemble !</p>
-                    <span class="status">Statut : Idée 💭</span>
-                </div>
+                <a href="#" class="travel-card-link">
+                    <img src="../images/voyage_amsterdam.jpg" alt="Canaux d'Amsterdam">
+                    <div class="travel-details">
+                        <h3>Amsterdam 🇳🇱</h3>
+                        <p>On va bien visité sous THC (on y va bientôt pormis).</p>
+                        <div class="travel-meta">
+                            <span class="duration">4 Jours</span>
+                            <span class="date">Prévu : Moins d'un an</span>
+                        </div>
+                        <div class="travel-meta">
+                            <span class="price">850 € pour 2</span>
+                            <span class="date" style="background-color: #ffcc00; color: #333;">URGENCE MAX 🚀</span>
+                        </div>
+                    </div>
+                    <div class="travel-hover-desc">
+                        <h4>Le plan : Space Cake & Vélo</h4>
+                        <p>Visiter les coffee shops, faire un tour en péniche, et trouver le meilleur endroit pour ces fameux space cakes. Ce voyage, c'est pour se faire plaisir vite fait.</p>
+                    </div>
+                </a>
             </div>
 
             <div class="travel-card">
-                <img src="https://images.unsplash.com/photo-1588661706680-36e3995f7c32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjU2OHwwfDF8c2VhcmNofDEyfHx0aGFpbGFuZCVFMyU4MCU5RGlzbGFuZHN8ZW58MHx8fHwxNjMzMzkzMTIx&ixlib=rb-1.2.1&q=80&w=400" alt="Plage en Thaïlande">
-                <div class="travel-details">
-                    <h3>Thaïlande 🇹🇭</h3>
-                    <p>Temples magnifiques et plages paradisiaques. L'endroit parfait pour se détendre et ne penser à rien.</p>
-                    <span class="status">Statut : À Budgétiser 💰</span>
-                </div>
+                <a href="#" class="travel-card-link">
+                    <img src="../images/voyage_aurore.jpg" alt="Aurores Boréales">
+                    <div class="travel-details">
+                        <h3>Aurores Boréales 🌌</h3>
+                        <p>Je vais allumer le ciel pour nous deux. On va se les gèler mais c'est ok.</p>
+                        <div class="travel-meta">
+                            <span class="duration">7 Jours</span>
+                            <span class="date">Prévu : 2026</span>
+                        </div>
+                        <div class="travel-meta">
+                            <span class="price">2 500€ pour 2</span>
+                            <span class="date">Statut :Faut épargner mdr</span>
+                        </div>
+                    </div>
+                    <div class="travel-hover-desc">
+                        <h4>Le plan : Bain Chaud sous le Froid</h4>
+                        <p>On va en Islande ou en Finlande. On trouvera un petit chalet, un bon bain chaud extérieur, et on attendra que le ciel fasse le spectacle pour notre couple.</p>
+                    </div>
+                </a>
             </div>
 
             <div class="travel-card">
-                <img src="https://images.unsplash.com/photo-1510113271501-526487e47d10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjU2OHwwfDF8c2VhcmNofDF8fGF1cm9yYSUyMGJvcmVhbGlzfGVufDB8fHx8MTYzMzM5MzM1Mg&ixlib=rb-1.2.1&q=80&w=400" alt="Aurores Boréales">
-                <div class="travel-details">
-                    <h3>Aurores Boréales 🌌</h3>
-                    <p>Notre rêve le plus romantique : un spectacle de lumières sous les étoiles, bien au chaud l'un contre l'autre.</p>
-                    <span class="status">Statut : Le Plus Urgent ! ✨</span>
-                </div>
+                <a href="#" class="travel-card-link">
+                    <img src="../images/voyage_dublin.jpg" alt="Dublin, Irlande">
+                    <div class="travel-details">
+                        <h3>Dublin 🇮🇪</h3>
+                        <p>La ville que tu aimes plus que moi... Bref faut que tu me fasse visiter ( on va gouter la Guinness) </p>
+                        <div class="travel-meta">
+                            <span class="duration">7 Jours</span>
+                            <span class="date">Prévu : 2027</span>
+                        </div>
+                        <div class="travel-meta">
+                            <span class="price">900 € pour 2</span>
+                            <span class="date">Statut : En attente </span>
+                        </div>
+                    </div>
+                    <div class="travel-hover-desc">
+                        <h4>Le plan : Pubs et Culture</h4>
+                        <p>Tu es mon guide officiel. Je veux le Temple Bar et les recoins secrets que seule toi connais. On fait le musée Guinness, évidemment.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="travel-card">
+                <a href="#" class="travel-card-link">
+                    <img src="../images/voyage_thailande.jpg" alt="Plage en Thaïlande">
+                    <div class="travel-details">
+                        <h3>Thaïlande 🇹🇭</h3>
+                        <p>Deux semaines pour s'échapper de la vie et penser à rien d'autre. Ma promesse de t'emmener loin.</p>
+                        <div class="travel-meta">
+                            <span class="duration">14 Jours</span>
+                            <span class="date">Prévu : 2028</span>
+                        </div>
+                        <div class="travel-meta">
+                            <span class="price">2 500 € pour 2</span>
+                            <span class="date">Statut : Grand Projet</span>
+                        </div>
+                    </div>
+                    <div class="travel-hover-desc">
+                        <h4>Le plan : Adrénaline de vivre</h4>
+                        <p>Moitié temples à Chiang Mai, moitié îles. On mange local et on profite du soleil en oubliant le reste.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="travel-card">
+                <a href="#" class="travel-card-link">
+                    <img src="../images/voyage_portugal.jpg" alt="Lisbonne, Portugal">
+                    <div class="travel-details">
+                        <h3>Portugal 🇵🇹</h3>
+                        <p>Lisbonne et Porto. La mission est simple : S'aimer et se moquer des portugais</p>
+                        <div class="travel-meta">
+                            <span class="duration">7 Jours</span>
+                            <span class="date">Prévu : 2029</span>
+                        </div>
+                        <div class="travel-meta">
+                            <span class="price">1 100 € pour 2</span>
+                            <span class="date">Statut : En Attente</span>
+                        </div>
+                    </div>
+                    <div class="travel-hover-desc">
+                        <h4>Le plan : CHOCHE</h4>
+                        <p>On fait les rues de Lisbonne en tramway, on visite Belém, et on passe la journée à manger des petis flan et construire des maison #formationBTP tout dans l'immersion</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="travel-card">
+                <a href="#" class="travel-card-link">
+                    <img src="../images/voyage_bresil.jpg" alt="Carnaval de Rio">
+                    <div class="travel-details">
+                        <h3>Brésil (Carnaval) 🇧🇷</h3>
+                        <p>Promis dans notre vie. La fête, le soleil, et des paysages de zinzin </p>
+                        <div class="travel-meta">
+                            <span class="duration">14 Jours</span>
+                            <span class="date">Prévu : 2030</span>
+                        </div>
+                        <div class="travel-meta">
+                            <span class="price">5 800 € pour 2</span>
+                            <span class="date">Statut : Dream is real</span>
+                        </div>
+                    </div>
+                    <div class="travel-hover-desc">
+                        <h4>Le plan : Riooo babyy</h4>
+                        <p>Rio de Janeiro pour le Carnaval, les plages de Copacabana, et on essaiera d'aller voir les chutes d'Iguaçu parce que c'est vraiment stylé. Ça, c'est un voyage qui va compter.</p>
+                    </div>
+                </a>
             </div>
             
-            <div class="travel-card">
-                <img src="https://images.unsplash.com/photo-1550992383-a9d3167b5e43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjU2OHwwfDF8c2VhcmNofDN8fGFtc3RlcmRhbXxlbnwwfHx8fDE2MzQzNDY2Nzk&ixlib=rb-1.2.1&q=80&w=400" alt="Canaux d'Amsterdam">
-                <div class="travel-details">
-                    <h3>Amsterdam 🇳🇱</h3>
-                    <p>Une petite escapade européenne, le vélo, les canaux et beaucoup de culture. Parfait pour un long week-end.</p>
-                    <span class="status">Statut : Facile à Réaliser 👍</span>
-                </div>
-            </div>
-            
-            <div class="travel-card">
-                <img src="https://images.unsplash.com/photo-1560965319-33108c5c7d2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjU2OHwwfDF8c2VhcmNofDZ8fHBvcnR1Z2FsJTIwbGlzYm9ufGVufDB8fHx8MTYzNDM0NjkxNA&ixlib=rb-1.2.1&q=80&w=400" alt="Lisbonne, Portugal">
-                <div class="travel-details">
-                    <h3>Portugal 🇵🇹</h3>
-                    <p>Les tramways de Lisbonne, le Fado, et des Pastéis de Nata à savourer ensemble. Soleil garanti.</p>
-                    <span class="status">Statut : En Attente</span>
-                </div>
-            </div>
-
         </div>
         
         <a href="../index.html" class="back-link">← Retour à l'Accueil</a>
     </main>
-</body class="theme-voyage">
+</body>
 </html>
