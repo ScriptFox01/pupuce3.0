@@ -2,17 +2,15 @@
 
 /* ========================================= */
 /* --- 0. STYLES GÉNÉRAUX & STRUCTURE --- */
-/* NOUVEAU THÈME : VERT, MODERNE, LISIBLE */
 /* ========================================= */
 body {
-    font-family: 'Roboto', sans-serif; /* Police très lisible */
-    background-color: #f0f4f0; /* Fond vert très très clair */
-    color: #212121; /* Noir fort pour la lisibilité */
+    font-family: 'Roboto', sans-serif; /* Police moderne et lisible */
+    background-color: #f0f4f0; 
+    color: #212121;
     margin: 0;
     padding: 0;
     text-align: center;
-    transition: background-color 0.4s ease;
-    font-size: 1.05em; /* Texte un peu plus gros pour une meilleure lisibilité */
+    font-size: 1.05em; 
 }
 
 header {
@@ -22,7 +20,7 @@ header {
 }
 h1 {
     font-family: 'Dancing Script', cursive; /* Titre élégant conservé */
-    font-size: 3.5em; /* Un peu plus grand */
+    font-size: 3.5em;
     margin-bottom: 5px;
 }
 
@@ -46,7 +44,7 @@ h1 {
     font-weight: 500;
 }
 .menu a:hover {
-    color: #ff80a6; /* Rose conservé pour l'effet de survol personnel */
+    color: #ff80a6; 
     border-bottom: 2px solid #ff80a6;
 }
 
@@ -61,22 +59,8 @@ main {
     text-align: left;
 }
 
-/* Liens de retour */
-.back-link {
-    display: block;
-    width: fit-content;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #E8F5E9; /* Vert très clair */
-    color: #1B5E20;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-}
-
 /* ========================================= */
 /* --- 1. STYLE ÉCRAN DE VERROUILLAGE --- */
-/* (Base VERT/ROSE) */
 /* ========================================= */
 #password-screen {
     display: flex;
@@ -84,18 +68,18 @@ main {
     align-items: center;
     justify-content: center;
     min-height: 100vh; 
-    background-color: #E8F5E9; /* Fond vert très clair */
+    background-color: #E8F5E9; 
 }
 
 #password-input {
     padding: 12px 20px;
-    border: 3px solid #1B5E20; /* Vert Forêt */
+    border: 3px solid #1B5E20; 
     border-radius: 25px; 
     width: 250px;
 }
 
 #password-screen button {
-    background-color: #1B5E20; /* Vert Forêt */
+    background-color: #1B5E20; 
     color: white;
     padding: 12px 30px;
     border-radius: 25px;
@@ -103,10 +87,10 @@ main {
 
 
 /* ========================================= */
-/* --- 2. THÈME NETFLIX (VLOGS) --- (Non Modifié) */
+/* --- 2. THÈME NETFLIX (VLOGS) --- (Réparé) */
 /* ========================================= */
 .theme-netflix {
-    background-color: #141414; 
+    background-color: #141414;
     color: white;
     font-family: 'Quicksand', sans-serif; 
 }
@@ -117,15 +101,80 @@ main {
     max-width: none;
     margin: 0;
 }
-/* ... (autres styles Netflix non modifiés) ... */
+.theme-netflix h1, .theme-netflix h2, .theme-netflix h3, .theme-netflix p {
+    color: white;
+}
+
+/* Grille Vlogs */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; 
+    margin-top: 40px;
+    align-items: stretch;
+}
+
+.video-card {
+    background-color: #222; 
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s;
+    text-decoration: none; 
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+    border: 3px solid transparent; 
+}
+
+.video-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    border: 3px solid #E50914; 
+}
+
+.video-card img {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover; 
+    display: block; 
+}
+
+.video-info {
+    padding: 15px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    min-height: 120px; 
+}
+
+.video-info p {
+    flex-grow: 1; 
+    margin-bottom: 10px;
+}
+
+/* Badge "Nouveau" */
+.badge-new {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #E50914; 
+    color: white;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 10;
+}
 
 
 /* ========================================= */
-/* --- 3. THÈME SOUVENIRS (NOUVEAU VERT) --- */
-/* (Remplacement de .theme-mimi) */
+/* --- 3. THÈME SOUVENIRS (MISE À JOUR) --- */
 /* ========================================= */
 .theme-souvenirs {
-    background-color: #E8F5E9; /* Vert très clair pour le fond */
+    background-color: #E8F5E9; 
     color: #4a4a4a;
 }
 .theme-souvenirs main {
@@ -134,8 +183,9 @@ main {
     padding: 30px;
 }
 .theme-souvenirs h1, .theme-souvenirs h2, .theme-souvenirs h3 {
-    font-family: 'Dancing Script', cursive; 
-    color: #4CAF50; /* Vert Dominant pour les titres */
+    font-family: 'Roboto', sans-serif; /* POLICE LISIBLE */
+    color: #4CAF50; /* VERT */
+    font-size: 1.8em; /* PLUS GROS */
 }
 
 /* Styles spécifiques à la galerie de photos (Souvenirs) */
@@ -162,7 +212,7 @@ main {
 
 .gallery-item:hover {
     transform: scale(1.03); 
-    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3); /* Ombre verte au survol */
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3); 
 }
 
 .gallery-item img {
@@ -181,8 +231,8 @@ main {
 }
 
 .gallery-caption p {
-    font-size: 0.95em; /* Légèrement plus gros */
-    color: #4CAF50; /* Vert pour la date/lieu */
+    font-size: 0.95em; 
+    color: #4CAF50; 
     margin-bottom: 5px;
     flex-grow: 1; 
 }
@@ -211,6 +261,27 @@ main {
     font-family: 'Verdana', sans-serif;
 }
 
+.theme-voyage main {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* Structure de la grille */
+.travel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.travel-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative; 
+}
+
 .travel-card {
     background-color: white;
     border-radius: 12px;
@@ -220,8 +291,8 @@ main {
     text-align: left;
     position: relative; 
     min-height: 400px;
-    display: flex; /* AJOUT CLÉ 1 */
-    flex-direction: column; /* AJOUT CLÉ 2 */
+    display: flex;
+    flex-direction: column;
 }
 
 /* --- HOVER DESCRIPTION (FIX CENTRAGE) --- */
@@ -257,6 +328,7 @@ main {
     line-height: 1.6;
     margin: 10px 0;
 }
+
 
 /* ========================================= */
 /* --- 6. THÈME ADMINISTRATION (DOCUMENTS) --- */
