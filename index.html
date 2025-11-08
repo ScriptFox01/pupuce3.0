@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Styles spécifiques pour le chronomètre (doivent rester ici pour l'isolation) */
+        /* Styles spécifiques pour le chronomètre (déplacés ici pour l'isolation) */
         .timer-section {
             margin: 50px auto;
             padding: 40px 20px;
@@ -134,6 +134,8 @@
                     <div class="time-unit"><span id="years-pc">0</span><p>Années</p></div>
                     <div class="time-unit"><span id="months-pc">0</span><p>Mois</p></div>
                     <div class="time-unit"><span id="days-pc">0</span><p>Jours</p></div>
+                    <div class="time-unit"><span id="hours-pc">0</span><p>Heures</p></div>
+                    <div class="time-unit"><span id="minutes-pc">0</span><p>Minutes</p></div>
                     <div class="time-unit"><span id="seconds-pc">0</span><p>Secondes</p></div>
                     <div class="time-unit" style="min-width: 80px;"><span id="milliseconds-pc" class="milliseconds">000</span><p>Millisecondes</p></div>
                 </div>
@@ -144,6 +146,8 @@
                         <div class="time-unit"><span id="years-real">0</span><p>Ans</p></div>
                         <div class="time-unit"><span id="months-real">0</span><p>Mois</p></div>
                         <div class="time-unit"><span id="days-real">0</span><p>Jours</p></div>
+                        <div class="time-unit"><span id="hours-real">0</span><p>Hrs</p></div>
+                        <div class="time-unit"><span id="minutes-real">0</span><p>Min</p></div>
                         <div class="time-unit"><span id="seconds-real">0</span><p>Secondes</p></div>
                         <div class="time-unit" style="min-width: 60px;"><span id="milliseconds-real" class="milliseconds">000</span><p>ms</p></div>
                     </div>
@@ -187,7 +191,8 @@
                 sessionStorage.setItem('isAuthenticated', 'true');
                 startTimer(); 
             } else {
-                errorMessage.textContent = "Code incorrect. Réessaye, ma chérie !";
+                // FIX CRITIQUE: Affiche le message d'erreur personnalisé
+                errorMessage.textContent = "nan c'est pas ça t nul";
             }
         }
         
@@ -201,10 +206,9 @@
         };
 
         // ===================================
-        // LOGIQUE DES CHRONOMÈTRES (FIXÉE)
+        // LOGIQUE DES CHRONOMÈTRES (FIXÉE ET COMPLÉTÉE)
         // ===================================
 
-        // FIX: Utilisation d'une fonction unique d'intervalle pour les deux chronos
         const startDatePC = new Date(2025, 3, 25, 0, 0, 0); 
         const startDateReal = new Date(2025, 2, 5, 0, 0, 0); 
         
@@ -217,7 +221,7 @@
             const now = new Date();
             const difference = now.getTime() - startDate.getTime();
 
-            // Calcul Années et Mois (basé sur les dates)
+            // 1. Calcul Années, Mois, Jours (Basé sur les dates)
             let dateYears = now.getFullYear() - startDate.getFullYear();
             let dateMonths = now.getMonth() - startDate.getMonth();
             let dateDays = now.getDate() - startDate.getDate();
@@ -233,15 +237,26 @@
                 dateMonths += 12;
             }
 
-            // Calcul du temps écoulé (Secondes et Millisecondes)
-            let s = Math.floor((difference % minute) / second);
-            let ms = Math.floor(difference % second);
+            // 2. Calcul du temps restant (H, M, S, MS) - MODULO JOUR
+            const msInDay = 24 * 60 * 60 * 1000;
+            let timeOnlyMs = difference % msInDay; 
 
-            // Mise à jour de l'affichage
+            let h = Math.floor(timeOnlyMs / hour);
+            timeOnlyMs %= hour;
+
+            let m = Math.floor(timeOnlyMs / minute);
+            timeOnlyMs %= minute;
+
+            let s = Math.floor(timeOnlyMs / second);
+            let ms = Math.floor(timeOnlyMs % second);
+
+            // 3. Mise à jour de l'affichage
             if (document.getElementById(`years-${prefix}`)) {
                 document.getElementById(`years-${prefix}`).innerText = String(dateYears).padStart(2, '0');
                 document.getElementById(`months-${prefix}`).innerText = String(dateMonths).padStart(2, '0');
                 document.getElementById(`days-${prefix}`).innerText = String(dateDays).padStart(2, '0');
+                document.getElementById(`hours-${prefix}`).innerText = String(h).padStart(2, '0');
+                document.getElementById(`minutes-${prefix}`).innerText = String(m).padStart(2, '0');
                 document.getElementById(`seconds-${prefix}`).innerText = String(s).padStart(2, '0');
                 document.getElementById(`milliseconds-${prefix}`).innerText = String(ms).padStart(3, '0').slice(0, 3);
             }
@@ -253,7 +268,6 @@
                 updateTimer(startDateReal, 'real');
             }
             
-            // Exécute la fonction updateAllTimers toutes les 10 millisecondes
             updateAllTimers(); 
             setInterval(updateAllTimers, 10);
         }
