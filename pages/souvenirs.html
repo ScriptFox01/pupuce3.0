@@ -5,80 +5,21 @@
     <title>Nos Souvenirs 📸</title>
     <link rel="stylesheet" href="../style.css"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Styles spécifiques à la galerie */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2 ou 3 colonnes sur grand écran */
-            gap: 25px; /* Espacement entre les images */
-            margin-top: 40px;
-        }
-
-        .gallery-item {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            overflow: hidden; /* Pour que les bords arrondis s'appliquent bien */
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            cursor: pointer;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.03); /* Agrandissement léger au survol */
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 220px; /* Hauteur fixe pour toutes les images */
-            object-fit: cover; /* Recadre l'image pour qu'elle remplisse l'espace */
-            border-bottom: 2px solid #fce4ec; /* Petite séparation visuelle */
-        }
-
-        .gallery-caption {
-            padding: 15px;
-            text-align: left;
-        }
-
-        .gallery-caption h3 {
-            color: #4682B4; /* Vert Bleu Canard */
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 1.15em;
-        }
-
-        .gallery-caption p {
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 5px;
-        }
-        .back-link {
-            display: inline-block;
-            margin: 30px auto 0;
-            padding: 10px 20px;
-            background-color: #ffc0cb; /* Rose Pastel */
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-        }
-        .back-link:hover {
-            background-color: #ff99aa; /* Rose plus foncé */
-        }
-    </style>
 </head>
-<body>
+<body class="theme-mimi"> <a href="../index.html" class="back-link">← Retour à l'Accueil</a>
+
     <main>
-        <h1>📸pour pas oublier</h1>
-        <p>petite galerie de petits moments</p>
+        <h1>📸 pour pas oublier</h1>
+        <p>Petite galerie de nos moments les plus précieux.</p>
         
-        <div class="gallery">
+        <div class="gallery-grid"> 
+            
             <div class="gallery-item">
-                <img src="../images/artifice.jpg" alt="Feu d'artifice en mode amoureuse"> 
+                <img src="../images/artifice.jpg" alt="Feu d'artifice"> 
                 <div class="gallery-caption">
                     <h3>Feu d'artifice en mode amoureuse</h3>
                     <p>Lieu : Orgerus</p>
-                    <p>Date : 8 Juin 2025</p>
+                    <p class="date">Date : 8 Juin 2025</p>
                 </div>
             </div>
 
@@ -87,7 +28,7 @@
                 <div class="gallery-caption">
                     <h3>Journée à Paris</h3>
                     <p>Lieu : Paris du coup </p>
-                    <p>Date : 25 Mai 2025</p>
+                    <p class="date">Date : 25 Mai 2025</p>
                 </div>
             </div>
 
@@ -95,73 +36,56 @@
                 <img src="../images/couette.jpg" alt="Balade à travers houdan avec une couette sur les épaules..">
                 <div class="gallery-caption">
                     <h3>Balade à travers houdan avec une couette sur les épaules.. (#lechatavaituneenviepressante)</h3>
-                    <p>Lieu :Houdan</p>
-                    <p>Date : 25 Juin 2025</p>
+                    <p>Lieu : Houdan</p>
+                    <p class="date">Date : 25 Juin 2025</p>
                 </div>
             </div>
-        </div>
-        
-        <div class="gallery-item">
+            
+            <div class="gallery-item">
                 <img src="../images/narbonne.jpg" alt="au feu">
                 <div class="gallery-caption">
                     <h3>Les vacances a Narbonne en sah</h3>
-                    <p>Lieu :Sud de la France prêt des feux</p>
-                    <p>Date : 31 Juillet 2025</p>
+                    <p>Lieu : Sud de la France prêt des feux</p>
+                    <p class="date">Date : 31 Juillet 2025</p>
                 </div>
             </div>
-        </div>
-         
-        <div class="gallery-item">
+            
+            <div class="gallery-item">
                 <img src="../images/soulaucourt.jpg" alt="Miss dort dehors">
                 <div class="gallery-caption">
                     <h3>Miss qui dort dehors à même le sol, on se prépare pour Koh Lanta je pense ?</h3>
                     <p>Lieu : Au milieu d'un champs</p>
-                    <p>Date : 10 Août 2025</p>
+                    <p class="date">Date : 10 Août 2025</p>
                 </div>
             </div>
-        </div>
-         
-        <div class="gallery-item">
-                <img src="../images/couette.jpg" alt="Balade à travers houdan avec une couette sur les épaules..">
-                <div class="gallery-caption">
-                    <h3>Balade à travers houdan avec une couette sur les épaules.. (#lechatavaituneenviepressante)</h3>
-                    <p>Lieu : Houdan</p>
-                    <p>Date : 25 Juin 2025</p>
-                </div>
-            </div>
-        </div>
-        
-          <div class="gallery-item">
+            
+            <div class="gallery-item">
                 <img src="../images/teinture.jpg" alt="jsp">
                 <div class="gallery-caption">
                     <h3>Première fois pour la couleur Acajoux , Miss veut être rousse ?</h3>
                     <p>Lieu : Houdan</p>
-                    <p>Date : 17 Juin 2025</p>
+                    <p class="date">Date : 17 Juin 2025</p>
                 </div>
             </div>
-        </div>
 
-        <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="../images/voiture.jpg" alt="jsp">
                 <div class="gallery-caption">
-                    <h3></h3>
+                    <h3>[TITRE À AJOUTER]</h3>
                     <p>Lieu : Houdan</p>
-                    <p>Date : 24 Juin 2025</p>
+                    <p class="date">Date : 24 Juin 2025</p>
                 </div>
             </div>
-        </div>
 
-        <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="../images/tente.jpg" alt="doro party chez amandine?">
                 <div class="gallery-caption">
                     <h3>Petite soirée jaccuzi chez Amandine et après doro dans la tente. *Dodo </h3>
                     <p>Lieu : Bazainville</p>
-                    <p>Date : 9 Juillet 2025</p>
+                    <p class="date">Date : 9 Juillet 2025</p>
                 </div>
             </div>
-        </div>
-        
-        <a href="../index.html" class="back-link">← Retour à l'Accueil</a>
-    </main>
+            
+        </div> </main>
 </body>
 </html>
