@@ -304,6 +304,8 @@ main {
     text-align: left;
     position: relative; 
     min-height: 400px;
+    display: flex; 
+    flex-direction: column;
 }
 
 /* Effet de zoom au survol (ajusté) */
